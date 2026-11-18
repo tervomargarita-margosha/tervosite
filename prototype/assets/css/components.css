@@ -88,7 +88,7 @@
 .stub::before { content: "Заглушка · "; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; }
 .stub:last-child { margin-bottom: 0; }
 .dark .stub, .stub--dark { background: var(--stub-on-dark); color: rgba(var(--rgb-cream), 0.8); }
-.stub--block { min-height: 160px; display: flex; align-items: flex-start; }
+.stub--block { min-height: 160px; }
 
 /* ---------- details: раскрывающийся пункт ---------- */
 .acc { display: flex; flex-direction: column; gap: 12px; }
@@ -338,7 +338,8 @@
 .qual-photo img { object-position: 50% 30%; }
 @media (min-width: 1024px) { .qual-photo { aspect-ratio: 1 / 1; } }
 .docs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
-.docs--gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+.docs--gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (min-width: 640px) { .docs--gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .doc { display: flex; flex-direction: column; gap: 10px; }
 .doc__thumb { aspect-ratio: 3 / 4; border-radius: 14px; background: var(--white); box-shadow: 0 10px 24px rgba(var(--rgb-navy), 0.1); padding: 10px; display: flex; }
 .doc__thumb span { flex: 1; border-radius: 6px; background: linear-gradient(180deg, var(--cream), var(--cream-deep)); display: flex; align-items: center; justify-content: center; color: var(--bronze-line); }
@@ -566,7 +567,8 @@
 .plate-dark .hotline__who { color: var(--bronze-on-dark); }
 .plate-dark .hotline__tel { color: var(--on-dark); }
 .plate-dark .hotline__name { color: var(--on-dark-muted); }
-.plate-dark a { color: var(--bronze-on-dark); }
+.hotline a:not(.hotline__tel) { color: var(--bronze-on-dark); }
 
 .notfound { text-align: left; }
 .notfound .cluster { margin-top: 28px; }
+.crumbs span[aria-current] { display: inline-flex; align-items: center; min-height: 32px; }
