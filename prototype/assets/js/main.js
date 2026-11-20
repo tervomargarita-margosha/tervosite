@@ -39,6 +39,25 @@
     if ("ResizeObserver" in window) new ResizeObserver(measureHeader).observe(header);
   }
 
+  // Обложка видео-знакомства становится интерактивной после загрузки скрипта.
+  var videoButton = document.querySelector(".video-play");
+  var introVideo = document.querySelector(".video-frame");
+  if (videoButton && introVideo) {
+    var videoStage = videoButton.parentElement;
+    introVideo.hidden = true;
+    videoButton.hidden = false;
+    videoStage.classList.add("is-preview");
+    videoButton.addEventListener("click", function () {
+      introVideo.hidden = false;
+      introVideo.play().catch(function () {
+        // При отказе браузера запустить ролик доступны его штатные controls.
+      });
+      introVideo.focus();
+      videoButton.hidden = true;
+      videoStage.classList.remove("is-preview");
+    });
+  }
+
   // «Записаться» раскрывает выбор Telegram / ВКонтакте на месте, без всплывающих окон
   document.querySelectorAll("[data-choose]").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("data-choose"));

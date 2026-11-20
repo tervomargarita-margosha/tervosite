@@ -144,6 +144,15 @@
         <p class="lead">Пара минут, чтобы&nbsp;услышать мой&nbsp;голос и&nbsp;увидеть, как&nbsp;я&nbsp;говорю о&nbsp;работе.</p>
       </div>
       <div class="video-stage">
+        <svg class="video-silhouette" viewBox="70 194 344 446" aria-hidden="true">
+          <defs>
+            <clipPath id="video-silhouette-clip">
+              <path d="M98 616C84 594 84 563 79 541Q77 520 87 507C83 484 76 456 93 432Q112 414 150 416L169 411Q176 396 164 377C150 365 148 349 157 331Q143 316 152 290C162 260 174 228 203 211Q233 194 255 207C286 216 302 242 311 270Q323 298 312 320C321 337 317 357 307 369Q301 378 307 397L305 414C333 418 359 418 373 443C388 467 381 509 397 543Q416 552 406 575L403 637H221Q227 612 196 611Z"/>
+            </clipPath>
+          </defs>
+          <image href="assets/video/video-vizitka-poster.png" width="470" height="835" clip-path="url(#video-silhouette-clip)"/>
+        </svg>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео-знакомство" hidden></button>
         <video class="video-frame" width="720" height="1280" controls playsinline preload="none"
                poster="assets/video/video-vizitka-poster.png" aria-label="Видео-знакомство с Маргаритой Терво">
           <source src="assets/video/video-vizitka.mp4" type="video/mp4">
