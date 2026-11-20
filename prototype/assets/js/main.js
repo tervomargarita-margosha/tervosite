@@ -14,7 +14,7 @@
       nav.classList.toggle("is-open", !open);
     });
     nav.addEventListener("click", function (e) {
-      if (e.target.closest("a") && window.matchMedia("(max-width: 1023.98px)").matches) {
+      if (e.target.closest("a") && nav.classList.contains("is-open")) {
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Открыть меню");
         nav.classList.remove("is-open");
