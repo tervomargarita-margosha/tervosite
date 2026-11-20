@@ -275,19 +275,13 @@
 }
 
 /* ---------- видео-визитка ---------- */
-.video-stage { position: relative; display: flex; justify-content: center; padding: 28px 0; }
-.video-stage__ring { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; }
-.video-stage__ring--outer { width: calc(var(--fw) * 2.1); height: calc(var(--fw) * 2.1); box-shadow: inset 0 0 0 1px rgba(var(--rgb-bronze), 0.45); }
-.video-stage__ring--glow { width: calc(var(--fw) * 1.55); height: calc(var(--fw) * 1.55); background: radial-gradient(circle, rgba(var(--rgb-bronze), 0.22) 0%, rgba(var(--rgb-bronze), 0) 70%); }
+.video-stage { position: relative; width: min(236px, 100%); aspect-ratio: 9 / 16; margin-inline: auto; }
 .video-frame {
-  position: relative; z-index: 1; display: block; width: var(--fw); height: auto;
-  aspect-ratio: 9 / 16; border-radius: 26px; object-fit: cover;
-  background: var(--navy);
-  box-shadow: 0 0 0 1px rgba(var(--rgb-bronze), 0.5), 0 30px 60px rgba(var(--rgb-navy), 0.3);
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  border-radius: 26px; object-fit: cover;
 }
-.video-stage { --fw: min(236px, 62vw); }
 @media (min-width: 1024px) {
-  .video-stage { --fw: 330px; padding: 40px 0; }
+  .video-stage { width: min(330px, 100%); }
   .video-frame { border-radius: 32px; }
 }
 .video-layout { display: flex; flex-direction: column; }
