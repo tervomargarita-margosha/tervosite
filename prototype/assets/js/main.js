@@ -58,6 +58,21 @@
     });
   }
 
+  // Полноразмерные документы открываются поверх страницы.
+  var docViewer = document.getElementById("doc-viewer");
+  if (docViewer && typeof docViewer.showModal === "function") {
+    var docImage = docViewer.querySelector("img");
+    document.querySelectorAll(".doc__link").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        docImage.alt = link.textContent.trim();
+        docImage.src = link.href;
+        docViewer.showModal();
+      });
+    });
+  }
+
   // «Записаться» раскрывает выбор Telegram / ВКонтакте на месте, без всплывающих окон
   document.querySelectorAll("[data-choose]").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("data-choose"));
