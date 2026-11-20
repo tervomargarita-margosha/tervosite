@@ -11,11 +11,11 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css?v=qualification-diplomas">
+<link rel="stylesheet" href="assets/css/components.css?v=diploma-viewer">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
-<script src="assets/js/main.js?v=video-integrated" defer></script>
+<script src="assets/js/main.js?v=diploma-viewer" defer></script>
 <!-- /@head -->
 <link rel="preload" as="image" href="assets/img/hero-cutout-540.webp" imagesrcset="assets/img/hero-cutout-360.webp 360w, assets/img/hero-cutout-540.webp 540w, assets/img/hero-cutout-690.webp 690w" imagesizes="(min-width: 1024px) 540px, 250px" fetchpriority="high">
 <script type="application/ld+json">
@@ -184,7 +184,8 @@
     </ul>
     <div class="req-note">
       <p>Работаю со&nbsp;взрослыми и&nbsp;подростками от&nbsp;15&nbsp;лет.</p>
-      <p class="stub">своя фраза о&nbsp;том, что&nbsp;можно прийти без&nbsp;готовой цели, и&nbsp;о&nbsp;том, что&nbsp;цель работы&nbsp;– качество жизни, а&nbsp;не&nbsp;«избавиться любой ценой». После интервью (вопросы <span class="nw">5–6</span>)</p>
+      <p>Необязательно заранее знать, с&nbsp;чем&nbsp;именно вы&nbsp;хотите разобраться, или&nbsp;уметь подобрать правильные слова. Иногда достаточно чувствовать, что&nbsp;сейчас вам&nbsp;непросто и&nbsp;хочется, чтобы&nbsp;<span class="nw">что-то</span>&nbsp;изменилось.</p>
+      <p>Мы&nbsp;можем начать с&nbsp;этого. Постепенно разбираться в&nbsp;том, что&nbsp;происходит, искать понимание и&nbsp;способы сделать вашу жизнь немного легче, свободнее и&nbsp;ближе к&nbsp;тому, какой вы&nbsp;хотите её&nbsp;видеть.</p>
     </div>
     <div class="plate-dark plate-dark--lg limits dark">
       <p class="kicker">мои&nbsp;границы</p>
@@ -197,9 +198,9 @@
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>сексуальные дисфункции</span></li>
         </ul>
         <ul class="limits__col">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>наркотические и&nbsp;алкогольные зависимости в&nbsp;активной фазе употребления</span></li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>шизофрения и&nbsp;расстройства этого спектра</span></li>
           <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>работа с&nbsp;парой или&nbsp;семьей целиком</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><span>наркотические и&nbsp;алкогольные зависимости в&nbsp;активной фазе употребления</span></li>
         </ul>
       </div>
       <a class="btn btn--ghost limits__help" href="esli-tyazhelo/">Если&nbsp;вам&nbsp;сейчас очень тяжело <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -258,6 +259,12 @@
       </div>
     </div>
   </div>
+  <dialog class="doc-viewer" id="doc-viewer" aria-label="Документ об образовании">
+    <img alt="">
+    <form method="dialog">
+      <button class="doc-viewer__close" value="close" aria-label="Закрыть документ" autofocus>×</button>
+    </form>
+  </dialog>
 </section>
 
 <!-- 5. Я работаю не одна -->
