@@ -133,26 +133,24 @@
 </section>
 
 <!-- 2. Видео-визитка -->
-<section class="section section--deep paper" aria-label="Видео-знакомство">
+<section class="section section--deep paper" id="video" aria-label="Видео-знакомство">
   <div class="container">
     <div class="video-layout">
       <div class="video-layout__text">
         <p class="kicker">о&nbsp;работе со&nbsp;мной в&nbsp;двух&nbsp;словах</p>
         <p class="lead">Пара минут, чтобы&nbsp;услышать мой&nbsp;голос и&nbsp;увидеть, как&nbsp;я&nbsp;говорю о&nbsp;работе.</p>
-        <p class="stub"><span class="nw">видео-визитка</span>, размещаем через VK Видео или&nbsp;Rutube, не&nbsp;YouTube</p>
         <svg class="video-layout__motif" viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="mv"><circle cx="78" cy="100" r="58"/></clipPath></defs><circle cx="122" cy="100" r="58" fill="#B58B5C" opacity="0.22" clip-path="url(#mv)"/><circle cx="78" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="122" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="78" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/><circle cx="122" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/></svg>
       </div>
       <div>
         <div class="video-stage">
           <div class="video-stage__ring video-stage__ring--outer" aria-hidden="true"></div>
           <div class="video-stage__ring video-stage__ring--glow" aria-hidden="true"></div>
-          <figure class="video-frame">
-            <svg class="video-frame__rings" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#D9B98C" stroke-width="1.2"><circle cx="100" cy="100" r="16"/><circle cx="100" cy="100" r="32" opacity=".8"/><circle cx="100" cy="100" r="48" opacity=".62"/><circle cx="100" cy="100" r="64" opacity=".46"/><circle cx="100" cy="100" r="80" opacity=".32"/><circle cx="100" cy="100" r="96" opacity=".2"/></g></svg>
-            <div class="video-frame__play" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M9 6l10 6-10 6z"/></svg></div>
-            <figcaption>Видео появится позже. Обложка&nbsp;– кадр из&nbsp;видео</figcaption>
-          </figure>
+          <video class="video-frame" width="720" height="1280" controls playsinline preload="none"
+                 poster="assets/video/video-vizitka-poster.jpg" aria-label="Видео-знакомство с Маргаритой Терво">
+            <source src="assets/video/video-vizitka.mp4" type="video/mp4">
+            <a href="assets/video/video-vizitka.mp4">Скачать видео</a>
+          </video>
         </div>
-        <p class="stub stub--after"><span class="nw">видео-визитка</span>, размещаем через VK Видео или&nbsp;Rutube, не&nbsp;YouTube</p>
       </div>
     </div>
   </div>
