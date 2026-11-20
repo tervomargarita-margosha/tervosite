@@ -28,6 +28,17 @@
     });
   }
 
+  // Высота первого экрана учитывает фактическую высоту шапки.
+  var homeHero = document.querySelector(".hero");
+  var header = document.querySelector(".site-header");
+  if (homeHero && header) {
+    var measureHeader = function () {
+      homeHero.style.setProperty("--site-header-height", header.getBoundingClientRect().height + "px");
+    };
+    measureHeader();
+    if ("ResizeObserver" in window) new ResizeObserver(measureHeader).observe(header);
+  }
+
   // «Записаться» раскрывает выбор Telegram / ВКонтакте на месте, без всплывающих окон
   document.querySelectorAll("[data-choose]").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("data-choose"));
