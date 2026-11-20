@@ -11,11 +11,11 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css?v=video-watercolor">
+<link rel="stylesheet" href="assets/css/components.css?v=video-integrated">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=video-integrated" defer></script>
 <!-- /@head -->
 <link rel="preload" as="image" href="assets/img/hero-cutout-540.webp" imagesrcset="assets/img/hero-cutout-360.webp 360w, assets/img/hero-cutout-540.webp 540w, assets/img/hero-cutout-690.webp 690w" imagesizes="(min-width: 1024px) 540px, 250px" fetchpriority="high">
 <script type="application/ld+json">
@@ -144,6 +144,15 @@
         <p class="lead">Пара минут, чтобы&nbsp;услышать мой&nbsp;голос и&nbsp;увидеть, как&nbsp;я&nbsp;говорю о&nbsp;работе.</p>
       </div>
       <div class="video-stage">
+        <svg class="video-silhouette" viewBox="70 194 344 446" aria-hidden="true">
+          <defs>
+            <clipPath id="video-silhouette-clip">
+              <path d="M98 616C84 594 84 563 79 541Q77 520 87 507C83 484 76 456 93 432Q112 414 150 416L169 411Q176 396 164 377C150 365 148 349 157 331Q143 316 152 290C162 260 174 228 203 211Q233 194 255 207C286 216 302 242 311 270Q323 298 312 320C321 337 317 357 307 369Q301 378 307 397L305 414C333 418 359 418 373 443C388 467 381 509 397 543Q416 552 406 575L403 637H221Q227 612 196 611Z"/>
+            </clipPath>
+          </defs>
+          <image href="assets/video/video-vizitka-poster.png" width="470" height="835" clip-path="url(#video-silhouette-clip)"/>
+        </svg>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео-знакомство" hidden></button>
         <video class="video-frame" width="720" height="1280" controls playsinline preload="none"
                poster="assets/video/video-vizitka-poster.png" aria-label="Видео-знакомство с Маргаритой Терво">
           <source src="assets/video/video-vizitka.mp4" type="video/mp4">
