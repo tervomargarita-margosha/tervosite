@@ -255,7 +255,11 @@
   .hero__info { padding: 18px 30px; }
   .hero__where { font-size: 16px; }
   .hero__price { font-size: 33px; }
-  .hero__figure { display: block; position: relative; z-index: 2; min-height: clamp(340px, 65svh, 460px); }
+  .hero__figure {
+    display: block; position: relative; z-index: 2;
+    min-height: clamp(340px, 100dvh - var(--site-header-height, 77px) - 72px, 660px);
+    transform: translateX(-2vw);
+  }
   .hero__figure img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35)); }
   .hero__glow { display: block; position: absolute; left: calc(50% + min(120px, 6vw)); top: 50%; transform: translateY(-50%); width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--rgb-bronze), 0.28) 0%, rgba(var(--rgb-bronze), 0) 65%); pointer-events: none; }
 }
