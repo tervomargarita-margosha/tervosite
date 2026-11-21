@@ -39,6 +39,21 @@
     if ("ResizeObserver" in window) new ResizeObserver(measureHeader).observe(header);
   }
 
+  // Переносим нижний край акварели на фон «Квалификации» в том же масштабе.
+  var requestsSection = document.getElementById("requests");
+  var qualification = document.getElementById("qualification");
+  if (requestsSection && qualification && "ResizeObserver" in window &&
+      CSS.supports("mask-image", "linear-gradient(transparent, black)")) {
+    var alignQualificationTexture = function () {
+      var requestsBackground = getComputedStyle(requestsSection).background;
+      qualification.style.setProperty("--qualification-transition-background", requestsBackground);
+      qualification.style.setProperty("--qualification-transition-height", requestsSection.getBoundingClientRect().height + "px");
+    };
+    alignQualificationTexture();
+    new ResizeObserver(alignQualificationTexture).observe(requestsSection);
+    qualification.classList.add("has-texture-transition");
+  }
+
   // Обложка видео-знакомства становится интерактивной после загрузки скрипта.
   var videoButton = document.querySelector(".video-play");
   var introVideo = document.querySelector(".video-frame");

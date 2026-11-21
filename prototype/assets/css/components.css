@@ -278,11 +278,15 @@
 .home-intro { --video-seam: 42px; overflow: clip; }
 .home-intro .hero { z-index: 1; overflow: visible; background: transparent; }
 .home-intro .hero::before {
-  content: ""; background: var(--grad-hero);
-}
-.home-intro .hero::before, .hero__lighting {
+  content: "";
   position: absolute; inset: 0; pointer-events: none;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--video-seam)), 0 100%);
+  background: var(--navy) url("../img/hero-watercolor-bg.png") left top / cover no-repeat;
+}
+.home-intro .hero__lighting { display: none; }
+@media (min-width: 1024px) {
+  .home-intro .hero::before { background-position: right bottom; }
+  .home-intro .hero .diag { display: none; }
 }
 .video-section {
   margin-top: calc(-1px - var(--video-seam));
@@ -461,6 +465,35 @@
 }
 
 /* ---------- квалификация ---------- */
+#qualification {
+  --qualification-art: url("../img/qualification-watercolor.png");
+  --qualification-edge: #fde6d4;
+  background:
+    linear-gradient(to bottom, var(--qualification-edge), transparent 140px),
+    var(--qualification-art) center / cover no-repeat,
+    var(--cream-deep);
+}
+@media (max-width: 767.98px) {
+  #qualification {
+    --qualification-art: url("../img/qualification-watercolor-mobile.png");
+    --qualification-edge: #fdebd4;
+  }
+}
+@media (min-width: 1800px) {
+  #qualification { --qualification-edge: #fae0cf; }
+}
+#qualification.paper::before { content: none; }
+#qualification.has-texture-transition::before {
+  content: "";
+  inset: -1px 0 auto;
+  height: var(--qualification-transition-height);
+  background: var(--qualification-transition-background);
+  opacity: 1;
+  mix-blend-mode: normal;
+  /* Mirror the adjoining watercolor edge at the same scale and fade into the section. */
+  transform: scaleY(-1);
+  mask-image: linear-gradient(to bottom, transparent calc(100% - 140px), #000 calc(100% - 8px));
+}
 .edu { padding: 0; margin: 0; list-style: none; }
 .edu li { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-top: 1px solid rgba(var(--rgb-bronze), 0.3); }
 .edu__mark { flex: none; width: 9px; height: 9px; margin-top: 11px; transform: rotate(45deg); background: var(--bronze-line); }
