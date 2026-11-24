@@ -11,11 +11,11 @@
 <link rel="preload" href="../../assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/css/tokens.css">
 <link rel="stylesheet" href="../../assets/css/base.css">
-<link rel="stylesheet" href="../../assets/css/components.css?v=approved-content">
+<link rel="stylesheet" href="../../assets/css/components.css?v=diploma-viewer">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
-<script src="../../assets/js/main.js?v=watercolor-backgrounds" defer></script>
+<script src="../../assets/js/main.js?v=diploma-viewer" defer></script>
 <!-- /@head -->
 <script type="application/ld+json">
 {
@@ -61,12 +61,12 @@
 </head>
 <body>
 <!-- @header -->
-<a class="skip-link" href="#main">К содержанию</a>
+<a class="skip-link" href="#main">К&nbsp;содержанию</a>
 <header class="site-header">
   <div class="site-header__bar">
     <a class="brand" href="../../" aria-label="Маргарита Терво, психолог – на главную">
       <span class="brand__name">Маргарита Терво</span>
-      <span class="brand__role">психолог, гештальт-подход</span>
+      <span class="brand__role">психолог, <span class="nw">гештальт-подход</span></span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
       <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -74,12 +74,15 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Разделы сайта">
       <ul>
-        <li><a href="../../">Главная</a></li>
         <li><a href="../../obo-mne/">Обо мне</a></li>
-        <li><a href="../../usloviya/">Условия</a></li>
-        <li><a class="site-nav__crisis" href="../../esli-tyazhelo/">Срочная помощь</a></li>
+        <li><a href="../../#requests">С&nbsp;чем&nbsp;прийти</a></li>
+        <li><a href="../../#how">Как&nbsp;я&nbsp;работаю</a></li>
+        <li><a href="../../#terms">Стоимость</a></li>
+        <li><a href="../../stati/" aria-current="page">Статьи</a></li>
+        <li><a href="../../materialy/">Материалы</a></li>
+        <li><a class="site-nav__crisis" href="../../esli-tyazhelo/">Если&nbsp;вам&nbsp;сейчас очень тяжело</a></li>
       </ul>
-      <a class="btn btn--primary" href="../../#contact">Написать</a>
+      <a class="btn btn--primary" href="../../#contact">Записаться</a>
     </nav>
   </div>
 </header>
@@ -158,24 +161,27 @@
     <div class="footer-cols">
       <div class="footer-brand">
         <p class="footer-brand__name">Маргарита Терво</p>
-        <p class="footer-brand__role">психолог, гештальт-подход</p>
+        <p class="footer-brand__role">психолог, <span class="nw">гештальт-подход</span></p>
       </div>
       <nav aria-label="Разделы сайта в подвале">
         <h2 class="footer-h">Разделы</h2>
         <ul class="footer-list">
-          <li><a href="../../">Главная</a></li>
           <li><a href="../../obo-mne/">Обо мне</a></li>
-          <li><a href="../../usloviya/">Условия</a></li>
-          <li><a href="../../psihologicheskiy-kontrakt/">Психологический контракт</a></li>
+          <li><a href="../../#requests">С&nbsp;чем&nbsp;прийти</a></li>
+          <li><a href="../../#how">Как&nbsp;я&nbsp;работаю</a></li>
+          <li><a href="../../#terms">Стоимость</a></li>
+          <li><a href="../../stati/">Статьи</a></li>
+          <li><a href="../../materialy/">Материалы</a></li>
+          <li><a href="../../#faq">Частые вопросы</a></li>
         </ul>
       </nav>
       <div>
-        <h2 class="footer-h">Написать</h2>
+        <h2 class="footer-h">Запись</h2>
         <ul class="footer-list">
-          <li><a href="https://t.me/tervo_psy" rel="noopener">Написать в Telegram</a></li>
-          <li><a href="https://vk.ru/maante" rel="noopener">Написать во ВКонтакте</a></li>
-          <li><p>Кабинет: Думская ул., 5/22</p></li>
-          <li><p>Будни 11:00–20:00 по Москве</p></li>
+          <li><a href="https://t.me/tervo_psy" rel="noopener">Telegram</a></li>
+          <li><a href="https://vk.ru/maante" rel="noopener">ВКонтакте</a></li>
+          <li><p>Кабинет: Думская ул.,&nbsp;5/22</p></li>
+          <li><p>Будни <span class="nw">11:00–20:00</span>&nbsp;по&nbsp;Москве</p></li>
         </ul>
       </div>
       <div>
@@ -186,10 +192,14 @@
         </ul>
       </div>
     </div>
-    <a class="footer-crisis" href="../../esli-tyazhelo/"><span>Срочная помощь</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="footer-crisis" href="../../esli-tyazhelo/"><span>Если&nbsp;вам&nbsp;сейчас очень тяжело&nbsp;– телефоны доверия</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="footer-bottom">
+      <span>Терво Маргарита [отчество] · самозанятая · ИНН [ИНН]</span>
+      <a href="../../politika/">Политика обработки персональных данных</a>
+    </div>
   </div>
 </footer>
-<div class="sticky-cta"><a class="btn btn--primary" href="../../#contact"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Написать</a></div>
+<div class="sticky-cta"><a class="btn btn--primary" href="../../#contact"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Записаться</a></div>
 <!-- /@footer -->
 </body>
 </html>
