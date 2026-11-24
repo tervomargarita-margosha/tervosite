@@ -748,3 +748,16 @@ html:has(.doc-viewer[open]) { overflow: hidden; }
 .notfound { text-align: left; }
 .notfound .cluster { margin-top: 28px; }
 .crumbs span[aria-current] { display: inline-flex; align-items: center; min-height: 32px; }
+
+/* ---------- утверждённые тексты ---------- */
+.hero__approved-kicker { color: var(--bronze-on-dark); }
+.hero__text > p { max-width: 48ch; }
+.requests-group + .requests-group { margin-top: 28px; }
+.requests-group h3 { margin-bottom: 12px; color: var(--on-dark); }
+.approved-prose > h2:first-child { margin-top: 0; }
+.approved-prose a:not([class]) { color: var(--bronze-text); text-decoration: underline; }
+.approved-prose table { width: 100%; border-collapse: collapse; }
+.approved-prose th, .approved-prose td { padding: 10px; text-align: left; border-bottom: 1px solid rgba(var(--rgb-bronze), 0.3); }
+.approved-prose td:last-child { white-space: nowrap; }
+.approved-prose .acc__body { overflow-wrap: break-word; }
+.limits .link-action { display: inline-flex; margin-top: 4px; }
