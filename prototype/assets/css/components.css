@@ -356,6 +356,7 @@
   --wave-height: clamp(52px, 6.4vw, 106px);
   --wave-clearance: clamp(28px, 2.8vw, 42px);
   --requests-art: url("../img/requests/requests-bg-desktop.webp");
+  --request-card-background: linear-gradient(120deg, #FFF4EA, var(--cream));
   isolation: isolate;
   color: var(--on-dark);
   margin-top: -2px;
@@ -363,7 +364,7 @@
   background:
     linear-gradient(var(--video-edge) 4px, transparent 4px),
     linear-gradient(to bottom, transparent 16%, rgba(21, 34, 58, 0.58) 62%, transparent 93%),
-    var(--requests-art) center top / cover no-repeat,
+    var(--requests-art) center top / 100% 100% no-repeat,
     var(--navy);
 }
 #requests > .container { z-index: 4; }
@@ -776,8 +777,23 @@ details.limits > summary { display: flex; align-items: center; justify-content: 
 #requests details.limits > summary:focus-visible { outline-color: var(--navy); }
 details.limits > summary h3 { margin: 0; }
 details.limits > summary .acc__chev { width: 32px; height: 32px; }
-details.limits[open] > summary,
-details.limits > summary + .limits__intro { margin-bottom: 16px; }
+details.limits .limits__intro { padding-top: 16px; }
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    #requests details.limits::details-content {
+      interpolate-size: allow-keywords;
+      block-size: 0;
+      overflow: clip;
+      transition: block-size 320ms ease, content-visibility 320ms allow-discrete;
+    }
+    #requests details.limits[open]::details-content {
+      block-size: auto;
+      overflow: visible;
+      transition: block-size 320ms ease, content-visibility 320ms allow-discrete,
+        overflow 0s 320ms allow-discrete;
+    }
+  }
+}
 details.limits[open] > summary .acc__chev,
 .first-consultation[open] > summary .acc__chev { transform: rotate(180deg); }
 
@@ -847,7 +863,7 @@ details.limits[open] > summary .acc__chev,
 .first-consultation > summary:hover .first-consultation__toggle,
 .first-consultation__toggle.disclosure-close:hover { text-decoration: underline; }
 .first-consultation__body {
-  margin-top: 8px; padding: var(--gap) clamp(20px, 3vw, 36px) 32px;
+  margin-top: 8px; padding: var(--gap) var(--start-inset) 32px;
 }
 .first-consultation__body h4 { color: var(--on-dark); font-family: var(--font-serif); font-size: clamp(24px, 2.3vw, 30px); margin-block: 0 6px; }
 .first-consultation__steps { display: grid; gap: 20px; padding-inline-start: 1.4em; margin-block: 0 20px; }
@@ -912,7 +928,7 @@ details.limits[open] > summary .acc__chev,
 .req-groups, .request-group > ul { margin: 0; padding: 0; list-style: none; }
 .request-group {
   padding: clamp(18px, 2.35vw, 32px); border-radius: var(--r-card);
-  color: var(--navy); background: linear-gradient(120deg, #FFF4EA, var(--cream));
+  color: var(--navy); background: var(--request-card-background);
 }
 .request-group h3 { margin-bottom: 12px; }
 .request-group > ul { display: grid; gap: 8px; }
@@ -968,7 +984,7 @@ details.limits[open] > summary .acc__chev,
 
 /* Уточнения контраста и раскрывающихся условий на главной */
 #requests .limits {
-  background: var(--white);
+  background: var(--request-card-background);
   box-shadow: var(--sh-item);
 }
 .meeting-formats { margin-top: var(--gap); }
@@ -984,14 +1000,41 @@ details.limits[open] > summary .acc__chev,
 }
 .first-consultation__toggle.disclosure-close .acc__chev { transform: rotate(180deg); }
 .first-consultation .start-layout > * { min-width: 0; }
+.first-consultation__body { --start-inset: clamp(20px, 3vw, 36px); padding-bottom: 16px; }
+.first-consultation .start-pic { margin: 0 auto; }
+.first-consultation .disclosure-close { margin-top: 12px; }
+
+@media (min-width: 1024px) {
+  .first-consultation .start-layout {
+    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+    gap: var(--start-inset);
+    max-width: none;
+  }
+  .first-consultation .start-layout picture {
+    display: flow-root;
+    width: min(440px, calc(100% - 12px));
+  }
+  .first-consultation .start-pic {
+    max-width: none;
+    /* Exclude the transparent lower edge from the height of the panel. */
+    margin: 8px 0 -47%;
+    translate: 12px 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .first-consultation .start-layout { gap: 12px; }
+  .first-consultation .start-layout > :first-child > h4 { margin-bottom: 0; }
+  .first-consultation .start-layout picture { display: none; }
+}
 .first-consultation .steps__prepay .plate-phrase { overflow-wrap: anywhere; }
 
 @media (max-width: 767.98px) {
-  #requests .req-note {
-    padding: 14px 16px;
-    border-radius: var(--r-stub);
-    background: var(--cream);
-    color: var(--navy);
+  #requests .req-note { color: var(--navy); }
+  #requests details.limits > summary:focus-visible { outline: none; }
+  #requests details.limits > summary:focus-visible h3 {
+    text-decoration: underline;
+    text-underline-offset: .18em;
   }
   .first-consultation .steps__prepay { padding: 16px; }
   .first-consultation .steps__prepay .plate-phrase {

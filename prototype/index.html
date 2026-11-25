@@ -11,7 +11,7 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css?v=home-disclosures-close">
+<link rel="stylesheet" href="assets/css/components.css?v=start-layout-compact">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
@@ -390,7 +390,9 @@
         <div class="start-layout">
           <div>
             <h4>Начало работы</h4>
-            <img class="start-pic" src="assets/img/nachalo-raboty-480.webp" srcset="assets/img/nachalo-raboty-320.webp 320w, assets/img/nachalo-raboty-480.webp 480w, assets/img/nachalo-raboty-640.webp 640w, assets/img/nachalo-raboty-724.webp 724w" sizes="(min-width: 1024px) 440px, 300px" width="480" height="1440" alt="" loading="lazy" decoding="async">
+            <picture>
+              <img class="start-pic" src="assets/img/nachalo-raboty-480.webp" srcset="assets/img/nachalo-raboty-320.webp 320w, assets/img/nachalo-raboty-480.webp 480w, assets/img/nachalo-raboty-640.webp 640w, assets/img/nachalo-raboty-724.webp 724w" sizes="(min-width: 1024px) 440px, 300px" width="480" height="1440" alt="">
+            </picture>
           </div>
           <div>
             <ol class="first-consultation__steps">
@@ -401,9 +403,9 @@
             <li><h4>Дальнейшая работа</h4><p>Встречаемся регулярно и&nbsp;движемся к&nbsp;цели, которую сформулировали вместе. Цель может меняться, и&nbsp;это&nbsp;нормально. Время от&nbsp;времени сверяемся, что&nbsp;происходит и&nbsp;подходит&nbsp;ли вам&nbsp;работа.</p></li>
             </ol>
             <div class="plate-dark steps__prepay"><p class="plate-phrase">Запись утверждается по стопроцентной предоплате</p></div>
+            <button class="first-consultation__toggle disclosure-close" type="button" data-close-details>Свернуть<span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
           </div>
         </div>
-        <button class="first-consultation__toggle disclosure-close" type="button" data-close-details>Свернуть<span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></button>
       </div>
     </details>
     <div class="prices" id="fees">
