@@ -1060,3 +1060,20 @@ details.limits[open] > summary .acc__chev,
   background: var(--section-watercolor) center top / 100% 100% no-repeat;
   mask-image: linear-gradient(#000 45%, transparent 87%);
 }
+
+/* Подложки светлых блоков главной страницы */
+#how { background: var(--cream) url("../img/values-shadows.webp") center / cover no-repeat; }
+#terms { background: var(--cream) url("../img/terms-watercolor.webp") center / cover no-repeat; }
+#faq { background: var(--cream) url("../img/faq-flowers.webp") right top / cover no-repeat; }
+
+@media (max-width: 767.98px) {
+  #faq { background-image: url("../img/terms-watercolor.webp"); }
+  #faq.paper::before {
+    height: clamp(250px, 70vw, 390px);
+    bottom: auto;
+    background: url("../img/faq-flowers.webp") right top / cover no-repeat;
+    mask-image: linear-gradient(#000 60%, transparent);
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+}
