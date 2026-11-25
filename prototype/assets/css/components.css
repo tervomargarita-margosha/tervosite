@@ -179,6 +179,9 @@
   .site-nav .btn { margin-top: 16px; width: 100%; }
 }
 @media (min-width: 1200px) {
+  html { scroll-padding-top: 96px; }
+  body { overflow-x: clip; }
+  .site-header { position: sticky; top: 0; }
   .site-header__bar { padding: 12px var(--pad-x); }
   .js .menu-toggle { display: none; }
   .site-nav { display: flex; align-items: center; gap: clamp(16px, 2vw, 32px); }
@@ -835,6 +838,7 @@ details.limits[open] > summary .acc__chev,
 .first-consultation {
   scroll-margin-block-start: 90px; margin-bottom: var(--gap);
 }
+@media (min-width: 1200px) { .first-consultation { scroll-margin-block-start: 0; } }
 .first-consultation > summary { border-radius: var(--r-card); }
 .first-consultation__header, .first-consultation__body {
   background: var(--grad-dark-plate); color: var(--on-dark); border-radius: var(--r-card);
@@ -878,7 +882,8 @@ details.limits[open] > summary .acc__chev,
   scrollbar-width: none; padding: 4px 0 8px; margin: 0; list-style: none;
 }
 .resource-carousel__track > li { min-width: 0; scroll-snap-align: start; }
-.resource-carousel__track .a-card { height: 100%; }
+.resource-carousel__track .a-card { height: 100%; box-shadow: none; }
+.resource-carousel__track .a-card:hover { box-shadow: none; }
 .resource-carousel__track .a-card:focus-visible { outline-offset: -4px; }
 .resource-carousel__track .a-card__art { aspect-ratio: auto; height: clamp(112px, 15vw, 170px); }
 .resource-carousel__track .a-card__art .motif { width: 96px; height: 96px; }
