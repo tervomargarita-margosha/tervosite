@@ -1041,3 +1041,17 @@ details.limits[open] > summary .acc__chev,
     font-size: clamp(18px, 5vw, 22px);
   }
 }
+
+/* Акварель для тёмных секций */
+:root { --section-watercolor: url("../img/section-watercolor-navy.webp"); }
+.section--dark, .dark.section, .page-head, .site-footer {
+  background: var(--navy) var(--section-watercolor) center / cover no-repeat;
+}
+#requests::before {
+  content: "";
+  position: absolute;
+  inset: 4px 0 0;
+  pointer-events: none;
+  background: var(--section-watercolor) center top / 100% 100% no-repeat;
+  mask-image: linear-gradient(#000 45%, transparent 87%);
+}
