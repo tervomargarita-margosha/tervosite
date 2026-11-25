@@ -42,6 +42,8 @@ jobs:
           done
           echo "::error::The Pages artifact did not become visible"
           exit 1
+      - name: Allow artifact replication before deployment
+        run: sleep 20
       - id: deployment
         uses: actions/deploy-pages@v4
         with:
