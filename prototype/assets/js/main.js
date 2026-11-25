@@ -28,6 +28,95 @@
     });
   }
 
+  // Старые ссылки на #start ведут к раскрытой первичной консультации.
+  var firstConsultation = document.querySelector("details.first-consultation");
+  if (firstConsultation) {
+    var openConsultationFromHash = function () {
+      if (window.location.hash !== "#start") return;
+      firstConsultation.open = true;
+      firstConsultation.scrollIntoView({ block: "start" });
+    };
+    openConsultationFromHash();
+    window.addEventListener("hashchange", openConsultationFromHash);
+    document.querySelectorAll('a[href="#start"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        firstConsultation.open = true;
+      });
+    });
+  }
+
+  // Пояснения в схеме опор доступны мышью, с клавиатуры и по нажатию.
+  var activeSupportTip = null;
+  document.querySelectorAll(".support-tip").forEach(function (tip) {
+    var button = tip.querySelector("button");
+    var note = tip.querySelector(".support-tip__note");
+    var pinned = false;
+
+    function close() {
+      pinned = false;
+      note.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+      tip.classList.remove("is-open");
+      if (activeSupportTip === close) activeSupportTip = null;
+    }
+
+    function show() {
+      if (activeSupportTip && activeSupportTip !== close) activeSupportTip();
+      note.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+      tip.classList.add("is-open");
+      activeSupportTip = close;
+    }
+
+    tip.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse") show();
+    });
+    tip.addEventListener("pointerleave", function (event) {
+      if (event.pointerType === "mouse" && !pinned && !button.matches(":focus-visible")) close();
+    });
+    button.addEventListener("focus", function () {
+      if (button.matches(":focus-visible")) show();
+    });
+    button.addEventListener("blur", close);
+    button.addEventListener("click", function () {
+      if (pinned) {
+        close();
+      } else {
+        show();
+        pinned = true;
+      }
+    });
+    document.addEventListener("click", function (event) {
+      if (activeSupportTip === close && !tip.contains(event.target)) close();
+    });
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && activeSupportTip) activeSupportTip();
+  });
+
+  // Нативная прокрутка сохраняет свайп и доступ к карточкам с клавиатуры.
+  document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    var track = carousel.querySelector(".resource-carousel__track");
+    var controls = carousel.querySelector(".resource-carousel__controls");
+    var previous = controls.querySelector('[data-carousel-step="-1"]');
+    var next = controls.querySelector('[data-carousel-step="1"]');
+
+    function updateControls() {
+      previous.setAttribute("aria-disabled", String(track.scrollLeft <= 2));
+      next.setAttribute("aria-disabled", String(track.scrollWidth - track.clientWidth - track.scrollLeft <= 2));
+    }
+
+    controls.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-carousel-step]");
+      if (!button || button.getAttribute("aria-disabled") === "true") return;
+      track.scrollBy({ left: Number(button.dataset.carouselStep) * track.clientWidth });
+    });
+    track.addEventListener("scroll", updateControls, { passive: true });
+    window.addEventListener("resize", updateControls);
+    updateControls();
+    controls.hidden = false;
+  });
+
   // Высота первого экрана учитывает фактическую высоту шапки.
   var homeHero = document.querySelector(".hero");
   var header = document.querySelector(".site-header");

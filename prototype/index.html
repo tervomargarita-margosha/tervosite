@@ -11,11 +11,11 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css?v=booking-terms">
+<link rel="stylesheet" href="assets/css/components.css?v=approved-groups">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
-<script src="assets/js/main.js?v=watercolor-backgrounds" defer></script>
+<script src="assets/js/main.js?v=home-layout" defer></script>
 <!-- /@head -->
 <link rel="preload" as="image" href="assets/img/hero-cutout-540.webp" imagesrcset="assets/img/hero-cutout-360.webp 360w, assets/img/hero-cutout-540.webp 540w, assets/img/hero-cutout-690.webp 690w" imagesizes="(min-width: 1024px) 540px, 250px" fetchpriority="high">
 <script type="application/ld+json">
@@ -79,7 +79,7 @@
 </header>
 <!-- /@header -->
 
-<main id="main">
+<main id="main" class="home-main">
 <div class="home-intro">
 
 <!-- 1. Первый экран -->
@@ -110,14 +110,20 @@
             <p>Я&nbsp;постаралась собрать на&nbsp;этом сайте достаточно информации о&nbsp;себе, своём подходе и&nbsp;о&nbsp;том, как&nbsp;устроена наша&nbsp;работа. Вы&nbsp;можете спокойно познакомиться со&nbsp;мной, почитать статьи и&nbsp;материалы, прислушаться к&nbsp;своим ощущениям и&nbsp;решить, подходит&nbsp;ли вам&nbsp;то, что&nbsp;я&nbsp;предлагаю. А&nbsp;возможно, <span class="nw">что-то</span> полезное для&nbsp;себя вы&nbsp;найдёте уже&nbsp;здесь.</p>
           </details>
         </div>
-        <a class="hero__more" href="#start">Как&nbsp;начинается работа <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        <div class="hero__actions">
+          <a class="hero__more" href="#contact">Записаться <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="hero__more" href="#start">Как&nbsp;начинается работа <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        </div>
       </div>
       <div class="hero__figure">
         <img src="assets/img/hero-cutout-690.webp" srcset="assets/img/hero-cutout-540.webp 540w, assets/img/hero-cutout-690.webp 690w" sizes="540px" width="690" height="910" alt="Маргарита Терво">
       </div>
     </div>
   </div>
-  <svg class="diag" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="84" x2="1440" y2="14" stroke="#B58B5C" stroke-width="1.3" opacity="0.75" vector-effect="non-scaling-stroke"/></svg>
+  <svg class="hero-seam" viewBox="0 0 1000 42" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 42L1000 0" vector-effect="non-scaling-stroke"/>
+    <path d="M0 37L1000 -5" vector-effect="non-scaling-stroke"/>
+  </svg>
 </section>
 
 <!-- 2. Видео-визитка -->
@@ -152,10 +158,14 @@
 
 <!-- 3. С чем можно прийти -->
 <section class="section" id="requests" aria-labelledby="req-title">
-  <picture class="requests-wave" aria-hidden="true">
-    <source media="(max-width: 767.98px)" srcset="assets/img/requests/wave_transition_mobile.png">
-    <img src="assets/img/requests/wave_transition_desktop.png" alt="">
-  </picture>
+  <svg class="requests-wave" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <path id="requests-wave-edge" d="M0 78C75 104 124 103 198 89S308 69 370 73S499 96 570 88S681 66 751 46S853 21 899 29S968 41 1000 52" vector-effect="non-scaling-stroke"/>
+    </defs>
+    <path class="requests-wave__fill" d="M0 78C75 104 124 103 198 89S308 69 370 73S499 96 570 88S681 66 751 46S853 21 899 29S968 41 1000 52V0H0Z"/>
+    <use class="requests-wave__line" href="#requests-wave-edge"/>
+    <use class="requests-wave__line requests-wave__line--fine" href="#requests-wave-edge" transform="translate(0 -7)"/>
+  </svg>
   <img class="requests-branch" src="assets/img/requests/flower_branch_01.webp" alt="" aria-hidden="true">
   <div class="requests-stars" aria-hidden="true">
     <img class="requests-star requests-star--03" src="assets/img/requests/star_03.webp" alt="" aria-hidden="true">
@@ -167,26 +177,59 @@
     <img class="requests-star requests-star--01" src="assets/img/requests/star_01.webp" alt="" aria-hidden="true">
   </div>
   <div class="container">
-    <p class="kicker">ваш&nbsp;запрос</p>
     <h2 id="req-title">С&nbsp;чем&nbsp;можно прийти</h2>
-    <ul class="req-list">
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Переживания в&nbsp;отношениях: романтических, дружеских, семейных, рабочих</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Тревога, страхи, беспокойство</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Стыд, вина, самокритика</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Ощущение потери контроля</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Сложности адаптации: в&nbsp;новом коллективе, городе, профессии</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>«Хочу, но&nbsp;не&nbsp;могу»: одна часть хочет одного, другая другого</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Трудно принять решение: учеба, переезд, расставание, увольнение</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Не&nbsp;получается проявлять эмоции или&nbsp;справляться с&nbsp;ними</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>Тревожно отделяться от&nbsp;родителей или&nbsp;близких</span></li>
-      <li><span class="dot-ring" aria-hidden="true"></span><span>«Не&nbsp;понимаю что, но&nbsp;<span class="nw">что-то</span> не&nbsp;так»</span></li>
+    <ul class="req-groups grid grid--2">
+      <li class="request-group">
+        <h3>Отношения</h3>
+        <ul>
+          <li>Мы часто ссоримся и не слышим друг друга</li>
+          <li>Мне трудно сказать близким, чего я хочу и что мне не подходит</li>
+          <li>Хочется близости, но когда человек становится ближе, мне страшно</li>
+          <li>Я снова выбираю людей, с которыми мне трудно быть собой</li>
+          <li>Мне сложно говорить «нет» и отстаивать свои границы</li>
+          <li>Мне трудно принимать решения без одобрения родителей или близких</li>
+        </ul>
+      </li>
+      <li class="request-group">
+        <h3>Состояния</h3>
+        <ul>
+          <li>Я часто тревожусь, и мне трудно перестать прокручивать одни и те же мысли</li>
+          <li>Мне трудно уснуть или я часто просыпаюсь ночью</li>
+          <li>Я много сплю, но всё равно чувствую усталость</li>
+          <li>Почти ничего не хочется, сил едва хватает на обычные дела</li>
+          <li>Я постоянно в напряжении, даже когда можно отдохнуть</li>
+          <li>«Хочу, но не могу»: одна часть меня хочет перемен, другая останавливает</li>
+        </ul>
+      </li>
+      <li class="request-group">
+        <h3>Переполняющие чувства</h3>
+        <ul>
+          <li>Мне стыдно, и я долго прокручиваю, что сказал или сделал</li>
+          <li>Я быстро злюсь и потом жалею о том, как отреагировал</li>
+          <li>Меня накрывает тоска, и трудно вернуться к обычным делам</li>
+          <li>Я завидую другим, и сравнения с ними задевают меня</li>
+          <li>Ревность занимает много мыслей и мешает доверять</li>
+          <li>Мне трудно отпустить обиду, даже когда разговор давно закончился</li>
+        </ul>
+      </li>
+      <li class="request-group">
+        <h3>Адаптация к изменениям в жизни</h3>
+        <ul>
+          <li>Вступаю в брак и привыкаю к новой совместной жизни</li>
+          <li>Переживаю расставание или развод</li>
+          <li>Начинаю учёбу или заканчиваю её и пока не знаю, что дальше</li>
+          <li>Переезжаю и привыкаю к новому месту</li>
+          <li>Ребёнок уезжает из дома, и привычная жизнь меняется</li>
+          <li>Меняю работу или профессию и осваиваюсь в новом коллективе</li>
+        </ul>
+      </li>
     </ul>
     <div class="req-note">
+      <p>«Не понимаю что, но что-то не так»</p>
       <p>Необязательно заранее знать, с&nbsp;чем&nbsp;именно вы&nbsp;хотите разобраться, или&nbsp;уметь подобрать правильные слова. Иногда достаточно чувствовать, что&nbsp;сейчас вам&nbsp;непросто и&nbsp;хочется, чтобы&nbsp;<span class="nw">что-то</span>&nbsp;изменилось</p>
     </div>
-    <div class="limits">
-      <p class="kicker">мои&nbsp;границы</p>
-      <h3>С&nbsp;чем&nbsp;я&nbsp;не&nbsp;работаю</h3>
+    <details class="limits">
+      <summary><h3>С&nbsp;чем&nbsp;я&nbsp;не&nbsp;работаю</h3><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
       <p class="limits__intro">Честно говорю об&nbsp;этом заранее, чтобы&nbsp;вы&nbsp;не&nbsp;тратили время и&nbsp;деньги:</p>
       <div class="limits__cols">
         <ul class="limits__col">
@@ -204,78 +247,29 @@
       <div class="limits__branch-clip" aria-hidden="true">
         <img class="limits__branch" src="assets/img/requests/flower_branch_02.webp" alt="" aria-hidden="true">
       </div>
-    </div>
+    </details>
   </div>
 </section>
 
 <!-- 4. Квалификация -->
 <section class="section section--deep paper" id="qualification" aria-labelledby="qual-title">
   <div class="container">
-    <div class="split split--top split--qual">
-      <div>
-        <p class="kicker">образование</p>
-        <h2 id="qual-title" style="margin-bottom: 20px">Квалификация</h2>
-        <ul class="edu">
-          <li><span class="edu__mark" aria-hidden="true"></span><div><p class="edu__title">Факультет психологии СПбГУ</p><p class="edu__sub">2026, красный диплом</p></div></li>
-          <li><span class="edu__mark" aria-hidden="true"></span><div><p class="edu__title">Московский гештальт институт, базовый&nbsp;курс</p><p class="edu__sub">1&nbsp;ступень, в&nbsp;процессе</p></div></li>
-          <li><span class="edu__mark" aria-hidden="true"></span><div><p class="edu__title">Основы психологической работы с&nbsp;детьми и&nbsp;подростками</p><p class="edu__sub">«Архитектура будущего», 2024</p></div></li>
-          <li><span class="edu__mark" aria-hidden="true"></span><div><p class="edu__title"><span class="nw">Профессионально-личностное</span> консультирование</p><p class="edu__sub">Центр при&nbsp;психологической клинике СПбГУ,&nbsp;2025</p></div></li>
-        </ul>
-        <div class="qual-more">
-          <p>Если&nbsp;вам&nbsp;так&nbsp;же важно знать <span class="nw">что-то</span> обо мне&nbsp;как&nbsp;о&nbsp;человеке, можете заглянуть на&nbsp;отдельную&nbsp;страницу.</p>
-          <a class="link-action" href="obo-mne/">Обо мне&nbsp;<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <figure class="photo qual-photo">
-          <img src="assets/img/portrait-800.webp" srcset="assets/img/portrait-480.webp 480w, assets/img/portrait-800.webp 800w, assets/img/portrait-1200.webp 1200w" sizes="(min-width: 1024px) 500px, 92vw" width="800" height="1200" alt="Маргарита Терво за рабочим столом" loading="lazy" decoding="async">
-        </figure>
-        <ul class="docs" aria-label="Документы об образовании">
-          <li class="doc">
-            <a class="doc doc__link" href="assets/img/diploma-1.webp">
-              <span class="doc__thumb doc__thumb--scan">
-                <img src="assets/img/diploma-1-thumb.webp" width="339" height="480" alt="" loading="lazy" decoding="async">
-              </span>
-              <span class="doc__cap">Диплом СПбГУ</span>
-            </a>
-          </li>
-          <li class="doc">
-            <a class="doc doc__link" href="assets/img/diploma-2.webp">
-              <span class="doc__thumb doc__thumb--scan">
-                <img src="assets/img/diploma-2-thumb.webp" width="339" height="480" alt="" loading="lazy" decoding="async">
-              </span>
-              <span class="doc__cap">Сертификат «Архитектура будущего»</span>
-            </a>
-          </li>
-          <li class="doc">
-            <a class="doc doc__link" href="assets/img/diploma-3.webp">
-              <span class="doc__thumb doc__thumb--scan">
-                <img src="assets/img/diploma-3-thumb.webp" width="400" height="274" alt="" loading="lazy" decoding="async">
-              </span>
-              <span class="doc__cap">Сертификат клиники СПбГУ</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <h2 id="qual-title">Квалификация</h2>
+    <p class="lead">Я&nbsp;окончила бакалавриат СПбГУ по&nbsp;психологии с&nbsp;отличием. Обучалась на&nbsp;программах по&nbsp;работе с&nbsp;детьми и&nbsp;подростками и&nbsp;навыкам профессионально-личностного консультирования. Сейчас учусь на&nbsp;первой ступени Московского Гештальт Института.</p>
+    <div class="qual-more">
+      <a class="link-action" href="obrazovanie/#education">Подробнее об&nbsp;образовании <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
-  <dialog class="doc-viewer" id="doc-viewer" aria-label="Документ об образовании">
-    <img alt="">
-    <form method="dialog">
-      <button class="doc-viewer__close" value="close" aria-label="Закрыть документ" autofocus>×</button>
-    </form>
-  </dialog>
 </section>
 
 <!-- 5. Я работаю не одна -->
-<section class="section section--dark dark support" aria-labelledby="support-title">
+<section class="section section--dark dark support support--home" aria-labelledby="support-title">
   <img class="bg-art" src="assets/img/uyutnaya-1-700.webp" srcset="assets/img/uyutnaya-1-400.webp 400w, assets/img/uyutnaya-1-700.webp 700w" sizes="(min-width: 1024px) 640px, 330px" width="700" height="705" alt="" aria-hidden="true" loading="lazy" decoding="async" style="right: -60px; top: -40px; width: clamp(330px, 44vw, 640px); opacity: 0.33">
   <div class="container">
-    <p class="kicker">опора в&nbsp;работе</p>
     <h2 id="support-title">Я&nbsp;работаю <em>не&nbsp;одна</em></h2>
     <p class="support__intro">Я&nbsp;человек, а&nbsp;у&nbsp;всех людей есть свои ограничения, и&nbsp;я&nbsp;отношусь к&nbsp;этому ответственно. Поэтому у&nbsp;меня&nbsp;выстроена система опор&nbsp;– вот как&nbsp;она&nbsp;устроена:</p>
 
-    <div class="schema-m" role="img" aria-label="Схема опор: личная терапия, индивидуальная и групповая супервизии в гештальт-подходе, групповая супервизия и интервизии с коллегами разных подходов – всё это стоит за нашей с вами сессией">
+    <div class="schema-m" role="group" aria-label="Схема опор: личная терапия, индивидуальная и групповая супервизии в гештальт-подходе, групповая супервизия и интервизии с коллегами разных подходов – всё это стоит за нашей с вами сессией">
       <svg viewBox="0 0 346 500" aria-hidden="true">
         <path class="dots" d="M173 127 L173 283" marker-end="url(#arr)"/>
         <path class="dots" d="M112 208 L156 287" marker-end="url(#arr)"/>
@@ -285,10 +279,10 @@
         <path class="dots" d="M173 355 L173 424" marker-end="url(#arr)"/>
       </svg>
       <span class="schema-m__node" style="left: 50%; top: 13.6%" aria-hidden="true"><span>Личная терапия</span></span>
-      <span class="schema-m__node" style="left: 24%; top: 31.4%" aria-hidden="true"><span>Индивидуальная супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span></span>
-      <span class="schema-m__node" style="left: 76%; top: 31.4%" aria-hidden="true"><span>Групповая супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span></span>
-      <span class="schema-m__node" style="left: 16.2%; top: 59.2%" aria-hidden="true"><span>Групповая супервизия с&nbsp;коллегами разных подходов</span></span>
-      <span class="schema-m__node" style="left: 83.8%; top: 59.2%" aria-hidden="true"><span>Интервизии с&nbsp;коллегами разных подходов</span></span>
+      <span class="schema-m__node support-tip support-tip--left" style="left: 24%; top: 31.4%"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-mobile-1"><span>Индивидуальная супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-mobile-1" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></span>
+      <span class="schema-m__node support-tip support-tip--right" style="left: 76%; top: 31.4%"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-mobile-2"><span>Групповая супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-mobile-2" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></span>
+      <span class="schema-m__node support-tip support-tip--left" style="left: 16.2%; top: 59.2%"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-mobile-3"><span>Групповая супервизия с&nbsp;коллегами разных подходов</span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-mobile-3" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></span>
+      <span class="schema-m__node support-tip support-tip--right" style="left: 83.8%; top: 59.2%"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-mobile-4"><span>Интервизии с&nbsp;коллегами разных подходов</span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-mobile-4" hidden><b>Интервизия</b>&nbsp;– такой&nbsp;же разбор с&nbsp;коллегами на&nbsp;равных. Всегда без&nbsp;имён и&nbsp;деталей, по&nbsp;которым вас&nbsp;можно&nbsp;узнать.</span></span>
       <span class="schema-m__me" aria-hidden="true"><span class="me">Я</span></span>
       <span class="schema-m__session" aria-hidden="true"><span class="session-pill">Наша&nbsp;с&nbsp;вами сессия</span></span>
     </div>
@@ -296,10 +290,10 @@
     <div class="schema-d">
       <ul class="schema-d__list">
         <li>Личная терапия</li>
-        <li>Индивидуальная супервизия в&nbsp;<span class="nw">гештальт-подходе</span></li>
-        <li>Групповая супервизия в&nbsp;<span class="nw">гештальт-подходе</span></li>
-        <li>Групповая супервизия с&nbsp;коллегами разных&nbsp;подходов</li>
-        <li>Интервизии с&nbsp;коллегами разных&nbsp;подходов</li>
+        <li class="support-tip"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-desktop-1"><span>Индивидуальная супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-desktop-1" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></li>
+        <li class="support-tip"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-desktop-2"><span>Групповая супервизия в&nbsp;<span class="nw">гештальт-подходе</span></span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-desktop-2" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></li>
+        <li class="support-tip"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-desktop-3"><span>Групповая супервизия с&nbsp;коллегами разных&nbsp;подходов</span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-desktop-3" hidden><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</span></li>
+        <li class="support-tip"><button class="support-tip__button" type="button" aria-expanded="false" aria-describedby="support-desktop-4"><span>Интервизии с&nbsp;коллегами разных&nbsp;подходов</span><svg class="icon support-tip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><span class="support-tip__note" id="support-desktop-4" hidden><b>Интервизия</b>&nbsp;– такой&nbsp;же разбор с&nbsp;коллегами на&nbsp;равных. Всегда без&nbsp;имён и&nbsp;деталей, по&nbsp;которым вас&nbsp;можно&nbsp;узнать.</span></li>
       </ul>
       <svg width="190" height="376" viewBox="0 0 190 376" aria-hidden="true" style="flex: none">
         <path class="dots" d="M8 32 C 70 32, 110 128, 176 128" marker-end="url(#arr)"/>
@@ -313,10 +307,6 @@
       <p class="session-pill">Наша&nbsp;с&nbsp;вами сессия</p>
     </div>
 
-    <div class="support__defs">
-      <div class="plate-soft"><p><b>Супервизия</b>&nbsp;– разбор сложных моментов работы с&nbsp;более опытным специалистом, один на&nbsp;один или&nbsp;в&nbsp;группе.</p></div>
-      <div class="plate-soft"><p><b>Интервизия</b>&nbsp;– такой&nbsp;же разбор с&nbsp;коллегами на&nbsp;равных. Всегда без&nbsp;имён и&nbsp;деталей, по&nbsp;которым вас&nbsp;можно&nbsp;узнать.</p></div>
-    </div>
     <p class="support__outro">За&nbsp;нашей работой стоит не&nbsp;только мой&nbsp;опыт, но&nbsp;и&nbsp;опыт моих коллег и&nbsp;наставников.</p>
   </div>
 </section>
@@ -324,7 +314,6 @@
 <!-- 6. Ценности в работе -->
 <section class="section paper" id="how" aria-labelledby="values-title">
   <div class="container">
-    <p class="kicker">как&nbsp;я&nbsp;работаю</p>
     <h2 id="values-title">Ценности в&nbsp;работе</h2>
     <div class="grid grid--2">
       <article class="card value">
@@ -351,33 +340,10 @@
         <p class="stub">что&nbsp;для&nbsp;меня&nbsp;Контакт и&nbsp;Встреча&nbsp;– после интервью (вопрос&nbsp;8)</p>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- 7. Гештальт простыми словами -->
-<section class="section section--deep paper" aria-labelledby="gestalt-title">
-  <div class="container">
-    <p class="kicker">как&nbsp;я&nbsp;работаю</p>
-    <h2 id="gestalt-title" style="margin-bottom: 22px">Гештальт простыми словами</h2>
-    <p class="lead">Гештальт помогает расширить контакт&nbsp;– с&nbsp;миром, с&nbsp;другими людьми и&nbsp;со&nbsp;своими переживаниями. Когда&nbsp;контакт с&nbsp;чувствами становится лучше, проще заметить свои потребности и&nbsp;найти разные, в&nbsp;том числе творческие, способы их&nbsp;удовлетворить.</p>
-    <ul class="ideas">
-      <li>
-        <svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="mi1"><circle cx="78" cy="100" r="58"/></clipPath></defs><circle cx="122" cy="100" r="58" fill="#B58B5C" opacity="0.22" clip-path="url(#mi1)"/><circle cx="78" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="122" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="78" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/><circle cx="122" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/></svg>
-        <h3>Идея 1</h3>
-        <p class="stub">одна из&nbsp;трёх идей гештальта, самых важных для&nbsp;клиентов&nbsp;– после интервью (вопросы <span class="nw">9–10</span>)</p>
-      </li>
-      <li>
-        <svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#B58B5C" stroke-width="1.2"><circle cx="100" cy="100" r="16"/><circle cx="100" cy="100" r="32" opacity=".8"/><circle cx="100" cy="100" r="48" opacity=".62"/><circle cx="100" cy="100" r="64" opacity=".46"/><circle cx="100" cy="100" r="80" opacity=".32"/><circle cx="100" cy="100" r="96" opacity=".2"/></g><circle cx="100" cy="100" r="5" fill="#B58B5C"/></svg>
-        <h3>Идея 2</h3>
-        <p class="stub">одна из&nbsp;трёх идей гештальта, самых важных для&nbsp;клиентов&nbsp;– после интервью (вопросы <span class="nw">9–10</span>)</p>
-      </li>
-      <li>
-        <svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><path d="M18 168 C 60 160, 40 110, 82 102 S 120 140, 140 96 S 120 46, 150 40" fill="none" stroke="#B58B5C" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 9"/><circle cx="160" cy="36" r="20" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="160" cy="36" r="30" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.45"/><circle cx="18" cy="168" r="4" fill="#B58B5C"/></svg>
-        <h3>Идея 3</h3>
-        <p class="stub">одна из&nbsp;трёх идей гештальта, самых важных для&nbsp;клиентов&nbsp;– после интервью (вопросы <span class="nw">9–10</span>)</p>
-      </li>
-    </ul>
-    <p style="margin-top: 28px"><a class="link-action" href="stati/geshtalt-prostymi-slovami/">Статья «Гештальт простыми словами» <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    <div class="more-links">
+      <a class="link-action" href="obo-mne/">Обо мне <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="link-action" href="geshtalt-podhod/">Подробнее о&nbsp;гештальт-подходе <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -385,80 +351,20 @@
 <section class="section section--dark dark" aria-labelledby="sess-title">
   <img class="bg-art" src="assets/img/uyutnaya-2-640.webp" srcset="assets/img/uyutnaya-2-360.webp 360w, assets/img/uyutnaya-2-640.webp 640w" sizes="(min-width: 1024px) 600px, 320px" width="640" height="795" alt="" aria-hidden="true" loading="lazy" decoding="async" style="right: -70px; top: -60px; width: clamp(320px, 42vw, 600px); opacity: 0.27">
   <div class="container">
-    <p class="kicker">как&nbsp;я&nbsp;работаю</p>
-    <h2 id="sess-title">На&nbsp;сессиях я</h2>
-    <ul class="sess">
-      <li style="--x1: 0px; --x2: 54px; --wa: 78%">
-        <span class="sess__deco sess__deco--ring" style="right: -30px" aria-hidden="true"></span>
-        <p class="sess__not">Не&nbsp;командую вами, не&nbsp;«тяну» в&nbsp;ту или&nbsp;иную сторону, не&nbsp;давлю</p>
-        <svg class="sess__arrow" viewBox="0 0 120 52" aria-hidden="true"><path class="dots" style="stroke-dasharray: 0.1 8" d="M6 4 C 8 34, 40 44, 84 46" marker-end="url(#arr)"/></svg>
-        <p class="sess__do">Способствую тому, чтобы&nbsp;вы&nbsp;могли говорить о&nbsp;том и&nbsp;так, как&nbsp;хочется вам. Если&nbsp;мне&nbsp;кажется, что&nbsp;мы&nbsp;далеко ушли от&nbsp;темы запроса, могу мягко это&nbsp;обозначить и&nbsp;поинтересоваться, хотелось&nbsp;бы&nbsp;ли вам&nbsp;вернуться к&nbsp;изначальной теме. Если&nbsp;у&nbsp;меня&nbsp;есть <span class="nw">какое-то</span> предположение, открыто выношу его&nbsp;на&nbsp;обсуждение.</p>
-      </li>
-      <li style="--x1: 22px; --x2: 34px; --wa: 74%">
-        <span class="sess__deco sess__deco--glow" aria-hidden="true"></span>
-        <p class="sess__not">Не&nbsp;оцениваю</p>
-        <svg class="sess__arrow" viewBox="0 0 120 52" aria-hidden="true"><path class="dots" style="stroke-dasharray: 0.1 8" d="M6 4 C 8 34, 40 44, 42 46" marker-end="url(#arr)"/></svg>
-        <p class="sess__do">Обращаюсь к&nbsp;вашим чувствам или&nbsp;говорю, что&nbsp;чувствую относительно ваших&nbsp;слов.</p>
-      </li>
-      <li style="--x1: 6px; --x2: 60px; --wa: 80%">
-        <span class="sess__deco sess__deco--ring" style="right: -18px" aria-hidden="true"></span>
-        <p class="sess__not">Не&nbsp;даю советов и, соответственно, не&nbsp;агитирую в&nbsp;сторону их&nbsp;выполнения</p>
-        <svg class="sess__arrow" viewBox="0 0 120 52" aria-hidden="true"><path class="dots" style="stroke-dasharray: 0.1 8" d="M6 4 C 8 34, 40 44, 84 46" marker-end="url(#arr)"/></svg>
-        <p class="sess__do">Даю рекомендации в&nbsp;рамках моей компетенции: техники, упражнения, обращение к&nbsp;смежным специалистам.</p>
-      </li>
-      <li style="--x1: 28px; --x2: 40px; --wa: 72%">
-        <span class="sess__deco sess__deco--glow" aria-hidden="true"></span>
-        <p class="sess__not">Не&nbsp;перевожу внимание на&nbsp;свою жизнь и&nbsp;свои&nbsp;переживания</p>
-        <svg class="sess__arrow" viewBox="0 0 120 52" aria-hidden="true"><path class="dots" style="stroke-dasharray: 0.1 8" d="M6 4 C 8 34, 40 44, 42 46" marker-end="url(#arr)"/></svg>
-        <p class="sess__do">И&nbsp;ваше, и&nbsp;свое внимание направляю на&nbsp;вас. Этот час для&nbsp;того, чтобы&nbsp;своими мыслями, чувствами и&nbsp;происшествиями могли поделиться вы. Я&nbsp;говорю о&nbsp;своих чувствах или&nbsp;опыте только относительно ваших слов и&nbsp;процесса работы, и&nbsp;только если&nbsp;вижу это&nbsp;полезным и&nbsp;уместным.</p>
-      </li>
-    </ul>
-    <div class="sess-more"><a class="link-action" href="obo-mne/">Подробнее обо мне&nbsp;<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  </div>
-</section>
-
-<!-- 9. Начало работы -->
-<section class="section paper" id="start" aria-labelledby="start-title">
-  <div class="container">
-    <div class="start-layout">
-      <div>
-        <p class="kicker">шаг за&nbsp;шагом</p>
-        <h2 id="start-title" style="margin-bottom: 22px">Начало работы</h2>
-        <img class="start-pic" src="assets/img/kollazh-nachalo-raboty-480.webp" srcset="assets/img/kollazh-nachalo-raboty-320.webp 320w, assets/img/kollazh-nachalo-raboty-480.webp 480w, assets/img/kollazh-nachalo-raboty-640.webp 640w" sizes="(min-width: 1024px) 440px, 300px" width="480" height="444" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="steps">
-        <div class="acc">
-          <details class="acc__item">
-            <summary><span class="ring ring--sm ring--num" aria-hidden="true">1</span><span class="acc__title"><span class="visually-hidden">Шаг 1. </span>Переписка</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-            <div class="acc__body">
-              <p>Можно в&nbsp;нескольких предложениях описать, что&nbsp;вас&nbsp;беспокоит, и&nbsp;задать вопросы, которые важны вам&nbsp;перед началом работы. Если&nbsp;сложно сформулировать, хватит и&nbsp;пары слов, даже «не&nbsp;понимаю, что&nbsp;со&nbsp;мной, но&nbsp;<span class="nw">что-то</span> не&nbsp;так». Если&nbsp;запрос не&nbsp;в&nbsp;моих компетенциях, я&nbsp;скажу об&nbsp;этом сразу и&nbsp;подскажу, к&nbsp;какому специалисту обратиться. Затем договариваемся о&nbsp;времени и&nbsp;формате первой&nbsp;встречи.</p>
-              <p class="steps__note">Если&nbsp;вам&nbsp;менее 18&nbsp;лет, до&nbsp;начала работы нужно, чтобы&nbsp;родители подписали согласие на&nbsp;нее.</p>
-            </div>
-          </details>
-          <div class="steps__link" aria-hidden="true"></div>
-          <details class="acc__item">
-            <summary><span class="ring ring--sm ring--num" aria-hidden="true">2</span><span class="acc__title"><span class="visually-hidden">Шаг 2. </span>Первичная консультация: 55&nbsp;минут, 1000&nbsp;₽</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-            <div class="acc__body">
-              <p>Говорим о&nbsp;том, что&nbsp;вас&nbsp;беспокоит: как&nbsp;давно, в&nbsp;каких ситуациях, как&nbsp;это&nbsp;сказывается на&nbsp;вашей жизни. Можно говорить в&nbsp;своем темпе и&nbsp;не&nbsp;отвечать на&nbsp;то, о&nbsp;чем&nbsp;пока не&nbsp;хочется. Вместе формулируем, к&nbsp;чему вы&nbsp;хотели&nbsp;бы прийти, и&nbsp;обсуждаем, что&nbsp;работа может дать, а&nbsp;что&nbsp;нет. После встречи вы&nbsp;спокойно решаете, продолжать&nbsp;ли. Первая встреча ни&nbsp;к&nbsp;чему не&nbsp;обязывает.</p>
-            </div>
-          </details>
-          <div class="steps__link" aria-hidden="true"></div>
-          <details class="acc__item">
-            <summary><span class="ring ring--sm ring--num" aria-hidden="true">3</span><span class="acc__title"><span class="visually-hidden">Шаг 3. </span>Психологический контракт</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-            <div class="acc__body">
-              <p>Договариваемся о&nbsp;том, какой вклад в&nbsp;работу будет внесен с&nbsp;вашей и&nbsp;с&nbsp;моей стороны, какие условия нам необходимо соблюсти для&nbsp;успешной&nbsp;работы.</p>
-            </div>
-          </details>
-          <div class="steps__link" aria-hidden="true"></div>
-          <details class="acc__item">
-            <summary><span class="ring ring--sm ring--num" aria-hidden="true">4</span><span class="acc__title"><span class="visually-hidden">Шаг 4. </span>Дальнейшая работа</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-            <div class="acc__body">
-              <p>Встречаемся регулярно и&nbsp;движемся к&nbsp;цели, которую сформулировали вместе. Цель может меняться, и&nbsp;это&nbsp;нормально. Время от&nbsp;времени сверяемся, что&nbsp;происходит и&nbsp;подходит&nbsp;ли вам&nbsp;работа.</p>
-            </div>
-          </details>
-        </div>
-        <div class="plate-dark steps__prepay"><p class="plate-phrase">Запись утверждается по&nbsp;стопроцентной&nbsp;предоплате</p></div>
-      </div>
+    <h2 id="sess-title">Как я&nbsp;работаю</h2>
+    <div class="acc grid grid--2 session-details">
+      <details class="acc__item"><summary><span class="acc__title">Не&nbsp;командую вами, не&nbsp;«тяну» в&nbsp;ту или&nbsp;иную сторону, не&nbsp;давлю</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="acc__body"><p>Способствую тому, чтобы&nbsp;вы&nbsp;могли говорить о&nbsp;том и&nbsp;так, как&nbsp;хочется вам. Если&nbsp;мне&nbsp;кажется, что&nbsp;мы&nbsp;далеко ушли от&nbsp;темы запроса, могу мягко это&nbsp;обозначить и&nbsp;поинтересоваться, хотелось&nbsp;бы&nbsp;ли вам&nbsp;вернуться к&nbsp;изначальной теме. Если&nbsp;у&nbsp;меня&nbsp;есть <span class="nw">какое-то</span> предположение, открыто выношу его&nbsp;на&nbsp;обсуждение.</p></div>
+      </details>
+      <details class="acc__item"><summary><span class="acc__title">Не&nbsp;оцениваю</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="acc__body"><p>Обращаюсь к&nbsp;вашим чувствам или&nbsp;говорю, что&nbsp;чувствую относительно ваших&nbsp;слов.</p></div>
+      </details>
+      <details class="acc__item"><summary><span class="acc__title">Не&nbsp;даю советов и, соответственно, не&nbsp;агитирую в&nbsp;сторону их&nbsp;выполнения</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="acc__body"><p>Даю рекомендации в&nbsp;рамках моей компетенции: техники, упражнения, обращение к&nbsp;смежным специалистам.</p></div>
+      </details>
+      <details class="acc__item"><summary><span class="acc__title">Не&nbsp;перевожу внимание на&nbsp;свою жизнь и&nbsp;свои&nbsp;переживания</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <div class="acc__body"><p>И&nbsp;ваше, и&nbsp;свое внимание направляю на&nbsp;вас. Этот час для&nbsp;того, чтобы&nbsp;своими мыслями, чувствами и&nbsp;происшествиями могли поделиться вы. Я&nbsp;говорю о&nbsp;своих чувствах или&nbsp;опыте только относительно ваших слов и&nbsp;процесса работы, и&nbsp;только если&nbsp;вижу это&nbsp;полезным и&nbsp;уместным.</p></div>
+      </details>
     </div>
   </div>
 </section>
@@ -466,43 +372,95 @@
 <!-- 10. Условия работы -->
 <section class="section section--deep paper" id="terms" aria-labelledby="terms-title">
   <div class="container">
-    <p class="kicker">стоимость и&nbsp;формат</p>
     <h2 id="terms-title">Условия работы</h2>
+    <details class="first-consultation" id="start">
+      <summary>
+        <div class="first-consultation__summary">
+          <div class="first-consultation__header">
+            <div>
+              <h3>Первичная консультация</h3>
+              <p>55&nbsp;минут · вне зависимости от&nbsp;формата</p>
+            </div>
+            <p class="first-consultation__price">1000&nbsp;₽</p>
+          </div>
+          <span class="first-consultation__toggle"><span class="first-consultation__more">Как начинается работа</span><span class="first-consultation__less">Свернуть</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></span>
+        </div>
+      </summary>
+      <div class="first-consultation__body">
+        <div class="start-layout">
+          <div>
+            <h4>Начало работы</h4>
+            <img class="start-pic" src="assets/img/kollazh-nachalo-raboty-480.webp" srcset="assets/img/kollazh-nachalo-raboty-320.webp 320w, assets/img/kollazh-nachalo-raboty-480.webp 480w, assets/img/kollazh-nachalo-raboty-640.webp 640w" sizes="(min-width: 1024px) 440px, 300px" width="480" height="444" alt="" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <ol class="first-consultation__steps">
+            <li><h4>Переписка</h4><p>Можно в&nbsp;нескольких предложениях описать, что&nbsp;вас&nbsp;беспокоит, и&nbsp;задать вопросы, которые важны вам&nbsp;перед началом работы. Если&nbsp;сложно сформулировать, хватит и&nbsp;пары слов, даже «не&nbsp;понимаю, что&nbsp;со&nbsp;мной, но&nbsp;<span class="nw">что-то</span> не&nbsp;так». Если&nbsp;запрос не&nbsp;в&nbsp;моих компетенциях, я&nbsp;скажу об&nbsp;этом сразу и&nbsp;подскажу, к&nbsp;какому специалисту обратиться. Затем договариваемся о&nbsp;времени и&nbsp;формате первой&nbsp;встречи.</p>
+                <p class="steps__note">Если&nbsp;вам&nbsp;менее 18&nbsp;лет, до&nbsp;начала работы нужно, чтобы&nbsp;родители подписали согласие на&nbsp;нее.</p></li>
+            <li><h4>Первичная консультация: 55&nbsp;минут, 1000&nbsp;₽</h4><p>Говорим о&nbsp;том, что&nbsp;вас&nbsp;беспокоит: как&nbsp;давно, в&nbsp;каких ситуациях, как&nbsp;это&nbsp;сказывается на&nbsp;вашей жизни. Можно говорить в&nbsp;своем темпе и&nbsp;не&nbsp;отвечать на&nbsp;то, о&nbsp;чем&nbsp;пока не&nbsp;хочется. Вместе формулируем, к&nbsp;чему вы&nbsp;хотели&nbsp;бы прийти, и&nbsp;обсуждаем, что&nbsp;работа может дать, а&nbsp;что&nbsp;нет. После встречи вы&nbsp;спокойно решаете, продолжать&nbsp;ли. Первая встреча ни&nbsp;к&nbsp;чему не&nbsp;обязывает.</p></li>
+            <li><h4>Психологический контракт</h4><p><a href="psihologicheskiy-kontrakt/">Подробнее о психологическом контракте</a></p><p>Договариваемся о&nbsp;том, какой вклад в&nbsp;работу будет внесен с&nbsp;вашей и&nbsp;с&nbsp;моей стороны, какие условия нам необходимо соблюсти для&nbsp;успешной&nbsp;работы.</p></li>
+            <li><h4>Дальнейшая работа</h4><p>Встречаемся регулярно и&nbsp;движемся к&nbsp;цели, которую сформулировали вместе. Цель может меняться, и&nbsp;это&nbsp;нормально. Время от&nbsp;времени сверяемся, что&nbsp;происходит и&nbsp;подходит&nbsp;ли вам&nbsp;работа.</p></li>
+            </ol>
+            <div class="plate-dark steps__prepay"><p class="plate-phrase">Запись утверждается по&nbsp;стопроцентной&nbsp;предоплате</p></div>
+          </div>
+        </div>
+      </div>
+    </details>
     <div class="prices">
-      <div class="plate-dark dark"><div class="price"><h3>Первичная консультация</h3><p class="price__sub">вне зависимости от&nbsp;формата</p><p class="price__val">1000&nbsp;₽</p></div></div>
       <div class="card"><div class="price"><h3>Онлайн</h3><p class="price__sub">в&nbsp;Яндекс Телемосте</p><p class="price__val">2700&nbsp;₽</p></div></div>
       <div class="card"><div class="price"><h3>Очно</h3><p class="price__sub"><span class="nw">Санкт-Петербург</span>, Думская ул., 5/22, м.&nbsp;Невский проспект и&nbsp;Гостиный&nbsp;двор</p><p class="price__val">3200&nbsp;₽</p></div></div>
       <div class="card"><div class="price"><h3>Для&nbsp;студентов</h3><p class="price__sub">вне зависимости от&nbsp;формата</p><p class="price__val">2000&nbsp;₽</p></div></div>
       <div class="card"><div class="price"><h3>Для&nbsp;получающих государственную социальную&nbsp;помощь</h3><p class="price__sub">вне зависимости от&nbsp;формата</p><p class="price__val">1500&nbsp;₽</p></div></div>
       <div class="card"><div class="price" style="gap: 14px"><span class="ring"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p class="h3">Будни, <span class="nw">11:00–20:00</span>&nbsp;по&nbsp;Москве</p><p class="price__sub">Сессия длится 55&nbsp;минут</p></div></div>
+      <div class="card"><div class="price"><h3>Перенос и&nbsp;отмена не&nbsp;позже чем&nbsp;за&nbsp;24&nbsp;часа</h3><p class="price__sub">Если планы изменятся, я верну предоплату при отмене встречи не&nbsp;позже чем за&nbsp;24&nbsp;часа до&nbsp;её начала.</p></div></div>
     </div>
-    <div class="rules">
-      <div class="plate-dark">
-        <p class="plate-phrase">Перенос и&nbsp;отмена не&nbsp;позже чем&nbsp;за&nbsp;24&nbsp;часа</p>
-        <p class="rules__note">Если планы изменятся, я верну предоплату при отмене встречи не&nbsp;позже чем за&nbsp;24&nbsp;часа до&nbsp;её начала.</p>
-      </div>
-      <p><span class="nw">Онлайн-встречи</span> проходят с&nbsp;включенными камерой и&nbsp;микрофоном у&nbsp;обоих, клиенту необходимо организовать себе уединенное пространство на&nbsp;время&nbsp;встречи.</p>
-    </div>
-    <div class="place">
-      <figure class="photo">
-        <img src="assets/img/kabinet-800.webp" srcset="assets/img/kabinet-480.webp 480w, assets/img/kabinet-800.webp 800w, assets/img/kabinet-1000.webp 1000w" sizes="(min-width: 1024px) 560px, 46vw" width="800" height="534" alt="Кабинет на Думской улице: кресла, диван, мягкий свет" loading="lazy" decoding="async">
-      </figure>
-      <a class="map" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%94%D1%83%D0%BC%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%205%2F22" rel="noopener" aria-label="Думская улица, 5/22 – открыть на Яндекс Картах">
-        <svg class="map__bg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(181,139,92,0.45)" stroke-width="10" fill="none" stroke-linecap="round"><path d="M-20 90 L420 60"/><path d="M-20 210 L420 190"/><path d="M120 -20 L150 320"/><path d="M290 -20 L270 320"/></g><path d="M-20 140 C 100 130, 220 160, 420 120" stroke="rgba(26,42,68,0.18)" stroke-width="16" fill="none"/></svg>
-        <span class="map__pin" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span>
-        <span class="map__cap">Думская ул., 5/22 · открыть на&nbsp;Яндекс Картах</span>
-      </a>
+    <div class="more-links">
+      <a class="link-action" href="usloviya/#formats">Кабинет и&nbsp;формат онлайн-встреч <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- 11. Запись -->
-<section class="section section--dark dark" id="contact" aria-labelledby="contact-title">
+<!-- Информация и инструменты для самопомощи -->
+<section class="section section--tight paper" aria-labelledby="read-title">
+  <div class="container">
+    <h2 id="read-title">Информация и&nbsp;инструменты для&nbsp;самопомощи</h2>
+    <div class="grid grid--2">
+      <div class="resource-carousel" data-carousel>
+        <ul class="resource-carousel__track" id="carousel-stati" aria-label="Статьи">
+          <li><a class="a-card" href="stati/chem-otlichaetsya-psiholog-ot-psihoterapevta-i-psihiatra/"><div class="a-card__art a-card__art--dark" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="mchem-o0"><circle cx="78" cy="100" r="58"/></clipPath></defs><circle cx="122" cy="100" r="58" fill="#D9B98C" opacity="0.22" clip-path="url(#mchem-o0)"/><circle cx="78" cy="100" r="58" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="122" cy="100" r="58" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="78" cy="100" r="72" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.4"/><circle cx="122" cy="100" r="72" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.4"/></svg></div><span class="a-card__body">Чем&nbsp;отличается психолог от&nbsp;психотерапевта и&nbsp;психиатра</span></a></li>
+          <li><a class="a-card" href="stati/kak-vybrat-psihologa/"><div class="a-card__art" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#B58B5C" stroke-width="1.2"><circle cx="100" cy="100" r="16" opacity="1"/><circle cx="100" cy="100" r="32" opacity="0.8"/><circle cx="100" cy="100" r="48" opacity="0.62"/><circle cx="100" cy="100" r="64" opacity="0.46"/><circle cx="100" cy="100" r="80" opacity="0.32"/><circle cx="100" cy="100" r="96" opacity="0.2"/></g><circle cx="100" cy="100" r="5" fill="#B58B5C"/></svg></div><span class="a-card__body">Как&nbsp;выбрать психолога</span></a></li>
+          <li><a class="a-card" href="stati/kak-prohodit-pervaya-konsultaciya/"><div class="a-card__art a-card__art--dark" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><path d="M18 168 C 60 160, 40 110, 82 102 S 120 140, 140 96 S 120 46, 150 40" fill="none" stroke="#D9B98C" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 9"/><circle cx="160" cy="36" r="20" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="160" cy="36" r="30" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.45"/><circle cx="18" cy="168" r="4" fill="#D9B98C"/></svg></div><span class="a-card__body">Как&nbsp;проходит первая консультация</span></a></li>
+          <li><a class="a-card" href="stati/geshtalt-prostymi-slovami/"><div class="a-card__art" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="mgeshta3"><circle cx="78" cy="100" r="58"/></clipPath></defs><circle cx="122" cy="100" r="58" fill="#B58B5C" opacity="0.22" clip-path="url(#mgeshta3)"/><circle cx="78" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="122" cy="100" r="58" fill="none" stroke="#B58B5C" stroke-width="1.4"/><circle cx="78" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/><circle cx="122" cy="100" r="72" fill="none" stroke="#B58B5C" stroke-width="0.8" opacity="0.4"/></svg></div><span class="a-card__body">Гештальт простыми словами</span></a></li>
+        </ul>
+        <div class="resource-carousel__footer">
+          <a class="link-action" href="stati/">Все статьи <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="resource-carousel__controls" hidden>
+            <button class="resource-carousel__button" type="button" data-carousel-step="-1" aria-label="Предыдущая карточка · Статьи" aria-controls="carousel-stati"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="resource-carousel__button" type="button" data-carousel-step="1" aria-label="Следующая карточка · Статьи" aria-controls="carousel-stati"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="resource-carousel" data-carousel>
+        <ul class="resource-carousel__track" id="carousel-materialy" aria-label="Материалы">
+          <li><a class="a-card" href="materialy/uprazhnenie-na-telesnye-impulsy/"><div class="a-card__art" aria-hidden="true"><span class="ring"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12h3l2-5 3 10 3-7 2 2h3"/></svg></span></div><span class="a-card__body">Упражнение на&nbsp;телесные импульсы</span></a></li>
+          <li><a class="a-card" href="materialy/art-terapevticheskaya-tehnika/"><div class="a-card__art" aria-hidden="true"><span class="ring"><svg class="icon" viewBox="0 0 24 24"><path d="M4 20l4-.8L20 7l-3-3L5 16l-1 4ZM14 7l3 3"/></svg></span></div><span class="a-card__body">Арт-терапевтическая техника</span></a></li>
+        </ul>
+        <div class="resource-carousel__footer">
+          <a class="link-action" href="materialy/">Все материалы <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="resource-carousel__controls" hidden>
+            <button class="resource-carousel__button" type="button" data-carousel-step="-1" aria-label="Предыдущая карточка · Материалы" aria-controls="carousel-materialy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="resource-carousel__button" type="button" data-carousel-step="1" aria-label="Следующая карточка · Материалы" aria-controls="carousel-materialy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Запись -->
+<section class="section section--dark dark" id="contact" aria-label="Запись">
   <div class="container">
     <div class="contact">
-      <p class="kicker">давайте знакомиться</p>
-      <h2 id="contact-title" style="margin-bottom: 20px">Запись</h2>
-      <p class="contact__lead">Записаться и&nbsp;задать вопросы можно в&nbsp;личных сообщениях. Также буду рада ответить на&nbsp;оставшиеся&nbsp;вопросы.</p>
+      <p class="contact__lead">В личных сообщениях можно задать вопрос об условиях или договориться о первой встрече. Если сложно сформулировать запрос, можно начать с нескольких слов.</p>
       <div class="cluster">
         <a class="btn btn--primary" href="https://t.me/tervo_psy" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M21 3L10 13"/></svg>Написать в&nbsp;Telegram</a>
         <a class="btn btn--ghost" href="https://vk.ru/maante" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Написать во&nbsp;ВКонтакте</a>
@@ -519,47 +477,19 @@
 <!-- 12. Частые вопросы -->
 <section class="section paper" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <p class="kicker">частые вопросы</p>
     <h2 id="faq-title">Частые вопросы</h2>
-    <div class="acc" style="max-width: 900px">
-      <details class="acc__item" open><summary><span class="acc__title">Частый вопрос № 1</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ&nbsp;– Марго пишет на&nbsp;этапе деталей. Возможная тема: возвращается&nbsp;ли предоплата при&nbsp;отмене</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 2</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: как&nbsp;подтвердить право на&nbsp;тариф 1500&nbsp;₽</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 3</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: что&nbsp;родители узнают о&nbsp;работе с&nbsp;подростком</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 4</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: почему <span class="nw">онлайн-встречи</span> только с&nbsp;камерой</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 5</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: как&nbsp;быстро приходит ответ на&nbsp;первое&nbsp;сообщение</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 6</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: сколько длится&nbsp;работа</p></div></details>
-      <details class="acc__item"><summary><span class="acc__title">Частый вопрос № 7</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body"><p class="stub">ответ на&nbsp;этапе деталей. Возможная тема: можно&nbsp;ли обращаться на&nbsp;«ты»</p></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- 13. Информация и инструменты для самопомощи -->
-<section class="section section--deep paper" aria-labelledby="read-title">
-  <div class="container">
-    <p class="kicker">полезное</p>
-    <h2 id="read-title">Информация и&nbsp;инструменты для&nbsp;самопомощи</h2>
-    <div class="grid grid--3">
-      <a class="a-card" href="stati/chem-otlichaetsya-psiholog-ot-psihoterapevta-i-psihiatra/">
-        <div class="a-card__art a-card__art--dark" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200"><defs><clipPath id="ma1"><circle cx="78" cy="100" r="58"/></clipPath></defs><circle cx="122" cy="100" r="58" fill="#D9B98C" opacity="0.22" clip-path="url(#ma1)"/><circle cx="78" cy="100" r="58" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="122" cy="100" r="58" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="78" cy="100" r="72" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.4"/><circle cx="122" cy="100" r="72" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.4"/></svg></div>
-        <div class="a-card__body"><span class="tag">О&nbsp;терапии</span><h3>Чем&nbsp;отличается психолог от&nbsp;психотерапевта и&nbsp;психиатра</h3><span class="a-card__meta"><span class="nw">Статья-заглушка</span> · время чтения</span></div>
-      </a>
-      <a class="a-card" href="stati/kak-vybrat-psihologa/">
-        <div class="a-card__art" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200"><g fill="none" stroke="#B58B5C" stroke-width="1.2"><circle cx="100" cy="100" r="16"/><circle cx="100" cy="100" r="32" opacity=".8"/><circle cx="100" cy="100" r="48" opacity=".62"/><circle cx="100" cy="100" r="64" opacity=".46"/><circle cx="100" cy="100" r="80" opacity=".32"/><circle cx="100" cy="100" r="96" opacity=".2"/></g><circle cx="100" cy="100" r="5" fill="#B58B5C"/></svg></div>
-        <div class="a-card__body"><span class="tag">О&nbsp;терапии</span><h3>Как&nbsp;выбрать психолога</h3><span class="a-card__meta"><span class="nw">Статья-заглушка</span> · время чтения</span></div>
-      </a>
-      <a class="a-card" href="stati/kak-prohodit-pervaya-konsultaciya/">
-        <div class="a-card__art a-card__art--dark" aria-hidden="true"><svg class="motif" viewBox="0 0 200 200"><path d="M18 168 C 60 160, 40 110, 82 102 S 120 140, 140 96 S 120 46, 150 40" fill="none" stroke="#D9B98C" stroke-width="3" stroke-linecap="round" stroke-dasharray="0 9"/><circle cx="160" cy="36" r="20" fill="none" stroke="#D9B98C" stroke-width="1.4"/><circle cx="160" cy="36" r="30" fill="none" stroke="#D9B98C" stroke-width="0.8" opacity="0.45"/><circle cx="18" cy="168" r="4" fill="#D9B98C"/></svg></div>
-        <div class="a-card__body"><span class="tag">О&nbsp;терапии</span><h3>Как&nbsp;проходит первая консультация</h3><span class="a-card__meta"><span class="nw">Статья-заглушка</span> · время чтения</span></div>
-      </a>
-    </div>
-    <div class="grid grid--2" style="margin-top: var(--gap)">
-      <a class="m-card" href="materialy/uprazhnenie-na-telesnye-impulsy/"><span class="ring"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 15h5M10 18h3"/></svg></span><span><span class="m-card__title">Упражнение на&nbsp;телесные импульсы</span><span class="m-card__meta"><span class="nw">Материал-заглушка</span> · PDF, без&nbsp;почты и&nbsp;телефона</span></span></a>
-      <a class="m-card" href="materialy/art-terapevticheskaya-tehnika/"><span class="ring"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 15h5M10 18h3"/></svg></span><span><span class="m-card__title"><span class="nw">Арт-терапевтическая</span> техника</span><span class="m-card__meta"><span class="nw">Материал-заглушка</span> · PDF, без&nbsp;почты и&nbsp;телефона</span></span></a>
-    </div>
-    <div class="more-links">
-      <a class="link-action" href="stati/">Все&nbsp;статьи <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="link-action" href="materialy/">Все&nbsp;материалы <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+<div class="acc" style="max-width: 900px">
+<details class="acc__item"><summary><span class="acc__title">Что делать, если на встрече я растеряюсь, замолчу или расплачусь?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Наши встречи как раз то место, где можно не боясь осуждения быть растерянным, молчать, плакать и быть в этом увиденным, понятым и принятым. Все перечисленное - нормальные человеческие состояния. Если вы переживаете об эффективности работы в таком случае, то с одной стороны мы можем обсудить само это переживание - с чем оно связано, с другой стороны - спешу вас успокоить, эти состояния а) редко длятся долго и б) дают огромную пользу для процесса - в них часто большая часть его сути.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Могу ли я сказать, что пока не готов обсуждать какую-то тему?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Да, можно так и сказать: «Я пока не хочу об этом говорить». Мы можем перейти к другой теме и вернуться к этой, когда и если вы будете готовы. Психика так устроена, что без ощущения достаточной безопасности действительно важные вещи могут даже не достигнуть сознания, поэтому моя главная задача - создать для вас это ощущение безопасности, а этого можно достичь только при отсутствии давления.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Что делать, если мне не подходит предложенное упражнение или я не согласен с тем, что вы сказали?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Скажите мне об этом, даже если пока трудно объяснить почему. Упражнение можно пропустить, а моё наблюдение можно обсудить: мне важно услышать, как вы сами видите ситуацию.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Как часто мы будем встречаться? Можно ли поменять частоту встреч, если изменится мой график или бюджет?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Рекомендуемая частота встреч - раз в неделю, минимальная раз в 2 недели. Я придерживаюсь тезиса о том, что при выборе между более редкой психологической работой и ее отсутствием всегда лучше первое, поэтому частоту встреч мы обсуждаем вместе. Если изменится график или бюджет, можно вернуться к этому разговору и подумать, какой вариант вам подходит сейчас.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Если я захочу взять паузу или завершить работу после нескольких встреч, как об этом сказать?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Можно сказать прямо: «Я хочу взять паузу» или «Я хочу закончить наши встречи». Если вы решили завершить работу, мы всегда проводим заключительную встречу. На ней можно обсудить какой для вас была наша работа, причины ее окончания, подвести итоги и поговорить о том, что вы хотите взять из нашей работы с собой.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Что будет, если во время онлайн-встречи пропадёт связь?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Пробуем переподключиться. Если не получается, списываемся в чате и обсуждаем, как поступить, в совсем безвыходной ситуации переносим встречу. Единичные форс-мажоры у всех иногда случаются, это нормально.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Мне 16 лет. Будет ли родитель присутствовать на первой встрече или мы будем разговаривать вдвоём?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>При любом формате работы перед ее началом мне необходимо лично поговорить с родителем в вашем присутствии - прояснить формат работы и границы конфиденциальности, ответить на ваши  вопросы о процессе работы, обменяться контактами с родителем и передать ему информированное согласие для подписи. Только после этого мы можем назначить первичную консультацию, которая уже подчиняется правилу конфиденциальности.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Можно писать между сессиями?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Существуют психотерапевтические подходы, в которых предполагается возможность связаться между встречами, мой подход к ним не относится. Мне можно писать по организационным вопросам - перенос или отмена встречи, уточнения по сеттингу или оплате. Если хочется подробнее разобрать то, что произошло между встречами, можем сделать это на сессии.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Вы будете давать домашние задания?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Иногда я могу предложить понаблюдать за чем-то в повседневной жизни, например заметить, в какие моменты вам трудно сказать «нет». Это предложение, и вы сами решаете, хотите ли попробовать.</p></div></details>
+<details class="acc__item"><summary><span class="acc__title">Нужно специально готовиться к первой встрече?</span><span class="acc__chev" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="acc__body prose"><p>Специально готовиться не нужно. Если вам так комфортнее, можно записать пару мыслей или вопросов, чтобы вспомнить их на встрече - хуже от этого точно не будет. Единственное, что правда необходимо подготовить - качественный интернет, звук и видео, а также уединенное пространство, где вы могли бы чувствовать себя свободно.</p></div></details>
+</div>
   </div>
 </section>
 
