@@ -1089,3 +1089,60 @@ details.limits[open] > summary .acc__chev,
     mix-blend-mode: normal;
   }
 }
+
+/* Золотистые стыки между секциями главной */
+.home-main > .section-seam {
+  --seam-depth: clamp(17px, 3vw, 42px);
+  margin-top: calc(-1 * var(--seam-depth));
+  padding-top: calc(var(--section-y) + var(--seam-depth));
+  z-index: 2;
+}
+.home-main > .section-seam--wave {
+  --seam-depth: clamp(32px, 4vw, 56px);
+  clip-path: polygon(0 calc(var(--seam-depth) * .52),
+    30% calc(var(--seam-depth) * .72), 73% calc(var(--seam-depth) * .26),
+    100% calc(var(--seam-depth) * .48), 100% 100%, 0 100%);
+  clip-path: shape(from 0 calc(var(--seam-depth) * .52),
+    curve to 30% calc(var(--seam-depth) * .72) with 10% calc(var(--seam-depth) * .65) / 19% calc(var(--seam-depth) * .72),
+    curve to 73% calc(var(--seam-depth) * .26) with 48% calc(var(--seam-depth) * .72) / 55% calc(var(--seam-depth) * .26),
+    curve to 100% calc(var(--seam-depth) * .48) with 83% calc(var(--seam-depth) * .26) / 91% calc(var(--seam-depth) * .36),
+    line to 100% 100%, line to 0 100%, close);
+}
+.home-main > .section-seam--slope {
+  clip-path: polygon(0 var(--seam-depth), 100% 0, 100% 100%, 0 100%);
+}
+.section-seam--straight {
+  position: relative;
+  --straight-gold: #bd985e;
+  box-shadow: inset 0 1.5px var(--straight-gold);
+}
+.section-seam--straight.dark, .site-footer.section-seam--straight { --straight-gold: #c9a873; }
+
+.section-seam > .section-seam__line {
+  position: absolute;
+  inset: 1px 0 auto;
+  width: 100%;
+  height: var(--seam-depth);
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: #bd985e;
+  stroke-width: 1.6px;
+}
+.section-seam.dark > .section-seam__line { stroke: #c9a873; }
+.section-seam-crossing { position: relative; height: 0; z-index: 3; pointer-events: none; }
+.section-seam-crossing > svg {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: var(--depth);
+  overflow: visible; fill: none; stroke: #ba9258; stroke-width: 1.1px; opacity: .92;
+}
+.section-seam-crossing--wave { --depth: clamp(32px, 4vw, 56px); }
+.section-seam-crossing--slope { --depth: clamp(17px, 3vw, 42px); }
+.section-seam-crossing--overlap > svg { top: calc(1px - var(--depth)); }
+.section-seam-crossing--dark > svg { stroke: #c9a873; }
+.section-seam-crossing--flat { --depth: clamp(9px, 1vw, 15px); }
+.section-seam-crossing--flat > svg { top: calc(var(--depth) * -.5); }
+
+#self-help { background: #feead1; }
+#self-help.paper::before { content: none; }

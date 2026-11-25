@@ -11,7 +11,7 @@
 <link rel="preload" href="assets/fonts/cormorant-garamond-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css?v=qualification-seam">
+<link rel="stylesheet" href="assets/css/components.css?v=section-transitions">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#1A2A44">
 <script>document.documentElement.classList.add("js")</script>
@@ -313,7 +313,15 @@
 </section>
 
 <!-- 6. Ценности в работе -->
-<section class="section paper" id="how" aria-labelledby="values-title">
+<div class="section-seam-crossing section-seam-crossing--wave section-seam-crossing--overlap" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 32 C100 49 190 60 300 64 C480 71 550 28 730 35 C830 39 910 52 1000 68" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section-seam section-seam--wave section paper" id="how" aria-labelledby="values-title">
+  <svg class="section-seam__line" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 52 C100 65 190 72 300 72 C480 72 550 26 730 26 C830 26 910 36 1000 48" vector-effect="non-scaling-stroke"/>
+  </svg>
   <div class="container">
     <h2 id="values-title">Ценности в&nbsp;работе</h2>
     <div class="grid grid--2">
@@ -349,7 +357,12 @@
 </section>
 
 <!-- 8. На сессиях я -->
-<section class="section section--dark dark" aria-labelledby="sess-title">
+<div class="section-seam-crossing section-seam-crossing--flat section-seam-crossing--dark" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 84 L1000 26" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section section--dark dark section-seam--straight" aria-labelledby="sess-title">
   <img class="bg-art" src="assets/img/uyutnaya-2-640.webp" srcset="assets/img/uyutnaya-2-360.webp 360w, assets/img/uyutnaya-2-640.webp 640w" sizes="(min-width: 1024px) 600px, 320px" width="640" height="795" alt="" aria-hidden="true" loading="lazy" decoding="async" style="right: -70px; top: -60px; width: clamp(320px, 42vw, 600px); opacity: 0.27">
   <div class="container">
     <h2 id="sess-title">Как я&nbsp;работаю</h2>
@@ -371,7 +384,15 @@
 </section>
 
 <!-- 10. Условия работы -->
-<section class="section section--deep paper" id="terms" aria-labelledby="terms-title">
+<div class="section-seam-crossing section-seam-crossing--slope section-seam-crossing--overlap" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 76 L1000 24" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section-seam section-seam--slope section section--deep paper" id="terms" aria-labelledby="terms-title">
+  <svg class="section-seam__line" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 100 L1000 0" vector-effect="non-scaling-stroke"/>
+  </svg>
   <div class="container">
     <h2 id="terms-title">Условия работы</h2>
     <details class="first-consultation" id="start">
@@ -442,7 +463,12 @@
 </section>
 
 <!-- Информация и инструменты для самопомощи -->
-<section class="section section--tight paper" id="self-help" aria-labelledby="read-title">
+<div class="section-seam-crossing section-seam-crossing--flat" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 84 L1000 26" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section section--tight paper section-seam--straight" id="self-help" aria-labelledby="read-title">
   <div class="container">
     <h2 id="read-title">Информация и&nbsp;инструменты для&nbsp;самопомощи</h2>
     <div class="grid grid--2">
@@ -479,7 +505,15 @@
 </section>
 
 <!-- Запись -->
-<section class="section section--dark dark" id="contact" aria-label="Запись">
+<div class="section-seam-crossing section-seam-crossing--wave section-seam-crossing--overlap section-seam-crossing--dark" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 32 C100 49 190 60 300 64 C480 71 550 28 730 35 C830 39 910 52 1000 68" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section-seam section-seam--wave section section--dark dark" id="contact" aria-label="Запись">
+  <svg class="section-seam__line" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 52 C100 65 190 72 300 72 C480 72 550 26 730 26 C830 26 910 36 1000 48" vector-effect="non-scaling-stroke"/>
+  </svg>
   <div class="container">
     <div class="contact">
       <p class="contact__lead">В личных сообщениях можно задать вопрос об условиях или договориться о первой встрече. Если сложно сформулировать запрос, можно начать с нескольких слов.</p>
@@ -497,7 +531,15 @@
 </section>
 
 <!-- 12. Частые вопросы -->
-<section class="section paper" id="faq" aria-labelledby="faq-title">
+<div class="section-seam-crossing section-seam-crossing--slope section-seam-crossing--overlap" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 76 L1000 24" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<section class="section-seam section-seam--slope section paper" id="faq" aria-labelledby="faq-title">
+  <svg class="section-seam__line" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 100 L1000 0" vector-effect="non-scaling-stroke"/>
+  </svg>
   <div class="container">
     <h2 id="faq-title">Частые вопросы</h2>
 <div class="acc" style="max-width: 900px">
@@ -518,7 +560,12 @@
 </main>
 
 <!-- @footer -->
-<footer class="site-footer">
+<div class="section-seam-crossing section-seam-crossing--flat section-seam-crossing--dark" aria-hidden="true">
+  <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path d="M0 84 L1000 26" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+<footer class="site-footer section-seam--straight">
   <div class="container">
     <div class="footer-cols">
       <div class="footer-brand">
