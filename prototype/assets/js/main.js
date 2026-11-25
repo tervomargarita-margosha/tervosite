@@ -45,6 +45,15 @@
     });
   }
 
+  document.querySelectorAll("[data-close-details]").forEach(function (button) {
+    var details = button.closest("details");
+    var summary = details.querySelector("summary");
+    button.addEventListener("click", function () {
+      details.open = false;
+      summary.focus();
+    });
+  });
+
   // Пояснения в схеме опор доступны мышью, с клавиатуры и по нажатию.
   var activeSupportTip = null;
   document.querySelectorAll(".support-tip").forEach(function (tip) {
