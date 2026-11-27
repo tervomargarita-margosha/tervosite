@@ -920,8 +920,6 @@ details.limits[open] > summary .acc__chev,
 }
 
 @media (min-width: 768px) {
-  .session-details:not(:has(details[open])) { grid-auto-rows: 1fr; align-items: stretch; }
-  .session-details:not(:has(details[open])) summary { height: 100%; }
   .first-consultation {
     background: var(--grad-dark-plate); color: var(--on-dark);
     border-radius: var(--r-card); box-shadow: var(--sh-dark-plate);
