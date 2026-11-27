@@ -30,14 +30,11 @@
     const top = header.offsetHeight + progress.offsetHeight;
     page.querySelectorAll('[data-swap]').forEach((figure) => {
       const section = figure.closest('.gs-split--inline-art');
-      const rail = section.querySelector('.gs-split__grid').getBoundingClientRect();
-      const available = innerHeight - top;
-      const distance = Math.max(rail.height - available, 1);
-      const amount = unitInterval((top - rail.top) / distance);
       section.style.setProperty('--gs-reading-top', top + 'px');
+      const rail = section.querySelector('.gs-split__grid').getBoundingClientRect();
+      const distance = Math.max(rail.height - figure.getBoundingClientRect().height, 1);
+      const amount = unitInterval((top - rail.top) / distance);
       figure.style.setProperty('--swap', amount);
-      const travel = narrow.matches ? 0 : Math.max(available - figure.offsetHeight, 0);
-      figure.style.setProperty('--swap-travel', (travel * amount) + 'px');
     });
 
     const flower = page.querySelector('[data-bloom]');
