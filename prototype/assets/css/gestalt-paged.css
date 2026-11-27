@@ -390,6 +390,7 @@ body:has(.gs-mapov[open]) { overflow: hidden; }
 #ch1 .gs-cover__num { display: block; font-size: clamp(4rem, 8vw, 7rem); }
 #ch1 .gs-cover__title { margin-bottom: 1.5rem; color: var(--ink); }
 
+.gs-split--inline-art { --gs-reading-top: calc(var(--gestalt-header-height, 75px) + 44px); }
 .gs-split--inline-art .gs-split__grid { row-gap: 0; }
 .gs-inline-before, .gs-inline-after { min-width: 0; }
 .gs-inline-art .gs-wc-swap img:first-child {
@@ -430,8 +431,19 @@ body:has(.gs-mapov[open]) { overflow: hidden; }
   .gs-inline-before, .gs-inline-after { grid-column: 2; }
   .gs-inline-before { grid-row: 1; }
   .gs-inline-after { grid-row: 2; }
-  .gs-inline-art { grid-column: 1; grid-row: 1 / span 2; align-self: stretch; padding-top: clamp(2rem, 10svh, 8rem); }
-  .gs-inline-art .gs-split__sticky { position: relative; top: auto; }
+  .gs-split--inline-art .gs-split__grid {
+    min-height: calc(100dvh - var(--gs-reading-top) + 14rem);
+    grid-template-rows: auto 1fr;
+  }
+  .gs-inline-art { grid-column: 1; grid-row: 1 / span 2; align-self: stretch; }
+  .gs-inline-art .gs-split__sticky {
+    top: var(--gs-reading-top);
+    height: calc(100dvh - var(--gs-reading-top));
+  }
+  .gs-inline-art .gs-wc-swap { transform: translateY(var(--swap-travel, 0px)); }
+  .gs-inline-art .gs-split__sticky .gs-wc img {
+    max-height: min(70svh, calc(100dvh - var(--gs-reading-top)));
+  }
 }
 @media (max-width: 900px) {
   .gs-world-art { position: absolute; inset: 0 -0.25rem; opacity: .38; pointer-events: none; }
@@ -448,7 +460,18 @@ body:has(.gs-mapov[open]) { overflow: hidden; }
     pointer-events: none;
   }
   .gs-split--painted .gs-split__body, #itog .gs-fin__text { position: relative; }
-  .gs-split--inline-art .gs-inline-art { margin: 0 0 1.1rem; }
+  .gs-split--inline-art .gs-split__grid { display: flex; flex-direction: column; align-items: stretch; }
+  .gs-inline-art {
+    order: -1;
+    position: sticky;
+    top: var(--gs-reading-top);
+    z-index: 1;
+    background: var(--paper);
+    margin-bottom: 1.1rem;
+  }
+  .gs-inline-art .gs-split__sticky .gs-wc img {
+    max-height: min(30svh, calc(100dvh - var(--gs-reading-top)));
+  }
   .gs-split--inline-art .gs-inline-art .gs-wc { margin-bottom: 0; }
 
   #kabinet .gs-fin__art { display: none; }
