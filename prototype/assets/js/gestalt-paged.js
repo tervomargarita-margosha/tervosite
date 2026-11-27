@@ -5,13 +5,14 @@
   const segments = [...story.querySelectorAll('.gs-seg')];
   const progress = story.querySelector('#prog');
   const label = story.querySelector('#progLabel');
-  const previous = story.querySelector('#progPrev');
-  const next = story.querySelector('#progNext');
   const map = story.querySelector('#mapov');
   const mapButton = story.querySelector('#mapBtn');
+  const narrow = matchMedia('(max-width: 900px)');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let current = -1;
   let frame = 0;
+
+  const unitInterval = (value) => Math.min(1, Math.max(0, value));
 
   function updateProgress() {
     frame = 0;
@@ -26,12 +27,23 @@
     });
 
     if (motion.matches) return;
+    const top = header.offsetHeight + progress.offsetHeight;
     page.querySelectorAll('[data-swap]').forEach((figure) => {
-      const section = figure.closest('.gs-split');
-      const bounds = section.getBoundingClientRect();
-      const position = (innerHeight * .55 - bounds.top) / Math.max(bounds.height, 1);
-      figure.style.setProperty('--swap', Math.max(0, Math.min(1, (position - .3) / .3)));
+      const art = figure.getBoundingClientRect();
+      const start = narrow.matches
+        ? Math.min(innerHeight - art.height / 2, art.top + scrollY - 24)
+        : (innerHeight + top - art.height) / 2;
+      const distance = Math.max(start - top, 1);
+      const amount = (start - art.top) / distance;
+      figure.style.setProperty('--swap', unitInterval(amount));
     });
+
+    const flower = page.querySelector('[data-bloom]');
+    if (flower && !narrow.matches) {
+      const bounds = flower.closest('.gs-fin').getBoundingClientRect();
+      const journey = Math.max(bounds.height - innerHeight * .5, 180);
+      flower.style.setProperty('--bloom', unitInterval((top - bounds.top) / journey));
+    }
   }
 
   function scheduleProgress() {
@@ -56,10 +68,6 @@
       current = index;
       label.textContent = page.dataset.label;
       progress.hidden = index === 0;
-      for (const [link, adjacent] of [[previous, pages[index - 1]], [next, pages[index + 1]]]) {
-        link.hidden = !adjacent;
-        if (adjacent) link.href = '#' + adjacent.id;
-      }
       document.title = (index === 0 ? '' : page.dataset.label + ' – ') + 'Гештальт простыми словами – Маргарита Терво';
     }
 
