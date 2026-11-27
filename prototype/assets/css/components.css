@@ -783,15 +783,15 @@ details.limits > summary { display: flex; align-items: center; justify-content: 
 details.limits > summary h3 { margin: 0; }
 details.limits > summary .acc__chev { width: 32px; height: 32px; }
 details.limits .limits__intro { padding-top: 16px; }
-@supports (interpolate-size: allow-keywords) {
+@supports (interpolate-size: allow-keywords) and selector(details::details-content) {
   @media (prefers-reduced-motion: no-preference) {
-    #requests details.limits::details-content {
+    :is(#requests details.limits, .session-details details, #terms details)::details-content {
       interpolate-size: allow-keywords;
       block-size: 0;
       overflow: clip;
       transition: block-size 320ms ease, content-visibility 320ms allow-discrete;
     }
-    #requests details.limits[open]::details-content {
+    :is(#requests details.limits, .session-details details, #terms details)[open]::details-content {
       block-size: auto;
       overflow: visible;
       transition: block-size 320ms ease, content-visibility 320ms allow-discrete,
